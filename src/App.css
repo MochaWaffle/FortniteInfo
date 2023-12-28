@@ -1,3 +1,68 @@
-body {
-    background-color: red;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .container {
+    margin: 1rem;
+    text-align: center;
+  }
+  
+  .nav {
+    background-color: rgb(76, 193, 214);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .site-title {
+    font-size: 3rem;
+  }
+  
+  .nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    font-size: 2rem;
+  }
+  
+  .nav a {
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: .25rem;
+  }
+  
+  .nav li.active {
+    background-color: rgb(9, 128, 149);
+  }
+  
+  .nav li:hover {
+    background-color: rgb(9, 128, 149);
+  }
+  .mapContainer {
+    margin:auto;
+    /* width:80%;
+    height:800px; */
+    /* border: 5px solid red; */
+    /* position: relative;
+    overflow: hidden; */
+  }
+  .mapContainer img {
+    width:800px;
+    height:800px;
+    /* object-fit: fill; */
+    border: 10px solid black;
+  }
