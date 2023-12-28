@@ -11,12 +11,12 @@ export default function CreatorCode() {
             .then((response) => response.json())
             .then((data) => {    
                 if (data.status === 404) {
-                    setIsValid("Invalid Code");
+                    setIsValid("Invalid");
                 } else if (data.status === 200) {
                     if (data.data.status === "ACTIVE") {
-                        setIsValid("Valid Code");
+                        setIsValid("Valid");
                     } else {
-                        setIsValid("Invalid Code");
+                        setIsValid("Invalid");
                     }
                 }
             });
@@ -37,7 +37,7 @@ export default function CreatorCode() {
             <button onClick= {handleSubmit}>Submit</button>
 
             {isValid !== '' &&
-                <p>{isValid}</p>
+                <p className = {isValid}>{isValid} Creator Code.</p>                
             }
         </>
     )
