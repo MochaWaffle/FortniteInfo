@@ -22,10 +22,11 @@ export default function News() {
     return (
         <>
             <h1> {newsTitle} </h1>
+            <p>"{newsText}"</p>
             <div className = "mapContainer">
                 <a href={newsImage} target="_blank"><img src={newsImage} className="mapImage" alt="Current Fortnite News Image"></img></a>
             </div>
-            <p>"{newsText}"</p>
+            
         </>
     )
 
