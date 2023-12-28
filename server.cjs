@@ -16,10 +16,9 @@ app.listen(5000, ()=> console.log(`Server is running on ${port}` ))
 app.get('/', (req,res)=>{    
     const options = {
         method: 'GET',
-        url: 'https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions',
+        url: 'https://fortnite-api.com/v2/stats/br/v2',
         headers: {
-            'X-RapidAPI-Key':process.env.REACT_APP_API_KEY,
-            'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+            'Authorization':import.meta.env.VITE_API_KEY,
         }
    };
    

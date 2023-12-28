@@ -1,7 +1,12 @@
 function App() {
 
   return (
-    <p>hi</p>
+    <>
+    <button>MAP</button>
+    <button>SHOP</button>
+    <button>STATS</button>
+    <button>NEWS</button>
+    </>
   )
 }
 
