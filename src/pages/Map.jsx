@@ -8,7 +8,7 @@ export default function Map() {
     }
     const [mapLink, setMapLink] = useState('');
 
-    useEffect(() => {getMap()});
+    useEffect(() => {getMap()}, []);
 
     return (
         <>
