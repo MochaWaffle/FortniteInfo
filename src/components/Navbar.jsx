@@ -11,7 +11,7 @@ export default function Navbar() {
         <CustomLink to="/news">News</CustomLink>
         <CustomLink to="/shop">Shop</CustomLink>
         <CustomLink to="/stats">Stats</CustomLink>
-        <CustomLink to="/creatercode">Creater Code</CustomLink>
+        <CustomLink to="/creatorcode">Creator Code</CustomLink>
       </ul>
     </nav>
   )

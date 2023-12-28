@@ -1,7 +1,7 @@
 
 import {useState} from 'react';
 
-export default function CreaterCode() {
+export default function CreatorCode() {
     const[code, setCode] = useState("");
     const[isValid, setIsValid] = useState("");
 
