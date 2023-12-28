@@ -1,13 +1,14 @@
 import {useEffect, useState} from 'react';
 
 export default function Map() {
-    const [mapLink, setMapLink] = useState('');
-
-    useEffect(() => {
+    function getMap() {
         fetch("https://fortnite-api.com/v1/map")
         .then((response) => response.json())
         .then((data) => setMapLink(data.data.images.pois));
-    }, []);
+    }
+    const [mapLink, setMapLink] = useState('');
+
+    useEffect(() => {getMap()});
 
     return (
         <>
