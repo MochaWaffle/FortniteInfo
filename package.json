@@ -2,9 +2,9 @@
   "name": "fortniteinfo",
   "private": true,
   "version": "0.0.0",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
-    "start:backend": "nodemon server.js",
+    "start:backend": "nodemon server.cjs",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
