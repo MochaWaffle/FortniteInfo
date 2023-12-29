@@ -87,3 +87,12 @@
 .Invalid {
   color: red;
 }
+.newsText {
+  margin:auto;
+  width:800px;
+  height:20%;
+  /* background-color: #01B0D3; */
+  padding: 5px;
+  /* border:5px solid #242333; */
+  font-size: 17px;
+}
