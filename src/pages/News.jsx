@@ -33,7 +33,7 @@ export default function News() {
         <>
             <h1> {newsTitle} </h1>
             
-            <div className = "imageContainer">
+            <div className = "newsContainer">
                 <div className="newsText">
                     <p><i>{newsText}</i></p>
                 </div>
