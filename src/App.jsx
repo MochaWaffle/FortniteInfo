@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router-dom"
 
 function App() {
   console.log('Width: ' + window.innerWidth)
+  console.log("Height: " + window.innerHeight)
   return (
     <>
       <Navbar />

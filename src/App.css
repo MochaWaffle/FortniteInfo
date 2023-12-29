@@ -147,7 +147,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 465px) {
+@media only screen and (max-width: 480px){
   .nav {
     background-color: #01B0D3;
     display: flex;
@@ -155,5 +155,16 @@ body {
     align-items: stretch;
     gap: 1rem;
     padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 465px){
+  .nav {
+    background-color: #01B0D3;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 0.8rem;
+    padding: 0 .2rem;
   }
 }
