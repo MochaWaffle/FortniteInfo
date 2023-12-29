@@ -6,6 +6,9 @@
   body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    /* background-color: lightgray; */
+    background-color: #242333;
+    color: white;
   }
   
   .container {
@@ -14,17 +17,19 @@
   }
   
   .nav {
-    background-color: rgb(76, 193, 214);
-    color: white;
+    /* background-color: rgb(76, 193, 214); */
+    background-color: #01B0D3;
+    /* color: white; */
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    gap: 2rem;
+    gap: 1.75rem;
     padding: 0 1rem;
   }
   
   .site-title {
-    font-size: 3rem;
+    font-size: 2.75rem;
+    /* background-color: transparent; */
   }
   
   .nav ul {
@@ -34,6 +39,7 @@
     display: flex;
     gap: 1rem;
     font-size: 2rem;
+    /* background-color: transparent; */
   }
   
   .nav a {
@@ -43,8 +49,12 @@
     display: flex;
     align-items: center;
     padding: .25rem;
+    /* background-color: transparent; */
   }
   
+  /* .nav li {
+    background-color: transparent;
+  } */
   .nav li.active {
     background-color: rgb(9, 128, 149);
   }
@@ -64,7 +74,8 @@
     width:800px;
     height:800px;
     /* object-fit: fill; */
-    border: 10px solid black;
+    /* border: 10px solid black; */
+    border: 10px solid #01B0D3;
   }
 
   /* .createrCodeInput {

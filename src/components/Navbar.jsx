@@ -7,10 +7,10 @@ export default function Navbar() {
         FortniteInfo
       </Link>
       <ul>
-        <CustomLink to="/map">Map</CustomLink>
-        <CustomLink to="/news">News</CustomLink>
-        <CustomLink to="/shop">Shop</CustomLink>
-        <CustomLink to="/creatorcode">Creator Code</CustomLink>
+        <CustomLink to="/map" className="linkStyle">Map</CustomLink>
+        <CustomLink to="/news" className="linkStyle">News</CustomLink>
+        <CustomLink to="/shop" className="linkStyle">Shop</CustomLink>
+        <CustomLink to="/creatorcode" className="linkStyle">Creator Code</CustomLink>
       </ul>
     </nav>
   )
