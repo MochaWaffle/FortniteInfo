@@ -17,27 +17,12 @@ export default function Stats() {
             params: {name: playerName, accountType: platform}
         }
 
-        // axios.request(options).then((response) => {
-        //     console.log(response.data)
-        //     setPlayerData(response.data)
-        // }).catch((error) => {
-        //     console.error(error)
-        // })
-        fetch('https://fortnite-api.com/v2/creatorcode?name=' + code)
-            .then((response) => response.json())
-            .then((data) => {    
-                if (data.status === 404) {
-                    setPlayerData(["Account does not exist or has no stats"])
-                } else if (data.status === 403) {
-                    setPlayerData(["Account stats are private"])
-                } else if (data.status === 400) {
-                    setPlayerData(["Invalid or missing parameter(s)"])
-                } else if (data.status === 200) {
-                    setPlayerData(data)
-                } else {
-                    setPlayerData(["N/A"])
-                }
-            });
+        axios.request(options).then((response) => {
+            console.log(response.data)
+            setPlayerData(response.data)
+        }).catch((error) => {
+            console.error(error)
+        })
 
         console.log(playerData);
     }
@@ -63,7 +48,7 @@ export default function Stats() {
                 </select>
                 <button onClick = {handleSubmit}>Submit</button>
             </form>
-            {playerData.length !== 0 && <p>{playerData.status}</p>}
+            {playerData.status === 200 && <p>{playerData.data}</p>}
         </>
     )
 }
