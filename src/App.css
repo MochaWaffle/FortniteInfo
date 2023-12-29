@@ -74,12 +74,12 @@ body {
 
   
 /*** Images ***/
-.mapContainer {
+.imageContainer {
   margin:auto;
 }
-.mapContainer img {
+.imageContainer img {
   width:800px;
-  height:800px;
+  height:500px;
   border: 10px solid #01B0D3;
 }
 

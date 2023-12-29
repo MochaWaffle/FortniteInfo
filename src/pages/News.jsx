@@ -33,12 +33,12 @@ export default function News() {
         <>
             <h1> {newsTitle} </h1>
             
-            <div className = "mapContainer">
+            <div className = "imageContainer">
                 <div className="newsText">
                     <p>"{newsText}"</p>
                 </div>
                 
-                <a href={newsImage} target="_blank"><img src={newsImage} className="mapImage" alt="Image could not load. Image was: Current Fortnite News Image"></img></a>
+                <a href={newsImage} target="_blank"><img src={newsImage} alt="Image could not load. Image was: Current Fortnite News Image"></img></a>
             </div>
             
         </>
