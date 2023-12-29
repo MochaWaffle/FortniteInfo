@@ -41,10 +41,12 @@ const app = express()
 app.use(cors())
 
 app.get('/', (req,res) => {
-    //const playerName = req.query.name;
+    const playerName = req.query.name;
+    const platform = req.query.accountType;
     const options = {
         method: 'GET',
-        url: 'https://fortnite-api.com/v2/stats/br/v2?name=MochaWall864836',
+        url: 'https://fortnite-api.com/v2/stats/br/v2',
+        params: {name: playerName, accountType: platform},
         headers: {
             'Authorization': process.env.VITE_API_KEY
         }
