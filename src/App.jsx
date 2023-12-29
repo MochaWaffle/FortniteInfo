@@ -7,6 +7,7 @@ import CreatorCode from "./pages/CreatorCode"
 import { Route, Routes } from "react-router-dom"
 
 function App() {
+  console.log('Width: ' + window.innerWidth)
   return (
     <>
       <Navbar />

@@ -42,7 +42,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  gap: 1.75rem;
+  gap: 2rem;
   padding: 0 1rem;
 }
 
@@ -131,4 +131,29 @@ body {
 .Invalid {
   color: rgb(255, 55, 55);
   font-size: 18px;
+}
+
+@media only screen and (max-width: 800px) {
+  .site-title {
+    font-size: 2rem;
+  }
+  .nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 465px) {
+  .nav {
+    background-color: #01B0D3;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
 }
