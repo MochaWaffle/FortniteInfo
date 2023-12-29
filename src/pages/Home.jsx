@@ -8,7 +8,8 @@ function Home() {
         </div> */}
             
             
-            <img className="backgroundImage" src={Fortnite_Wallpaper}/>
+        <img className="backgroundImage" src={Fortnite_Wallpaper}/>
+
         </>
     )
 }
