@@ -82,10 +82,12 @@
 
   } */
 .Valid {
-  color: green;
+  color: rgb(19, 218, 19);
+  font-size: 18px;
 }
 .Invalid {
-  color: red;
+  color: rgb(255, 55, 55);
+  font-size: 18px;
 }
 .newsText {
   margin:auto;
@@ -95,4 +97,35 @@
   padding: 5px;
   /* border:5px solid #242333; */
   font-size: 17px;
+}
+.codeInput {
+  border:none;
+  padding:10px;
+  /* margin-top: 50px; */
+  margin-right:5px;
+  font-size: 100%;
+  border:5px solid #01B0D3;
+}
+.codeSubmit {
+  border: 5px solid  #3e4040;
+  padding:10px;
+  font-size: 100%;
+  background-color:  #3e4040;
+  color: white;
+}
+.codeSubmit:hover {
+  border: 5px solid  #696d6d;
+  background-color: #696d6d;
+  color:white;
+}
+.codeSubmit:active {
+  border: 5px solid  #9a9c9c;
+  background-color: #9a9c9c;
+  color:white;
+}
+.parentCodeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
 }
