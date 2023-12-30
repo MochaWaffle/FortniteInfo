@@ -226,6 +226,42 @@ html, body {
   margin-top: 7%;
 }
 
+/*** Container Responsive Design ***/
+@media only screen and (max-width: 1380px) {
+  .container {
+    margin-top:10%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    margin-top: 15%;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .container {
+    margin-top: 20%;
+  }
+}
+
+@media only screen and (max-width: 445px) {
+  .container {
+    margin-top: 25%;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .container {
+    margin-top: 30%;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .container {
+    margin-top: 40%;
+  }
+}
 /*** Map and News Image and News Text Responsive Design ***/
 
 /* Map and News */

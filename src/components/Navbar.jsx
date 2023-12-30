@@ -19,7 +19,7 @@ export default function Navbar() {
         <Link to="/" className="logo">FortniteInfo</Link>
 
         <input type="checkbox" id="check" />
-        <label for="check" className="icons" >
+        <label htmlFor="check" className="icons" >
           <box-icon name='menu' id="menu-icon" color="white" size="2.8rem"></box-icon>
           <box-icon name='x' id="close-icon" color="white" size="2.8rem"></box-icon>
         </label>
