@@ -250,7 +250,7 @@ html, body {
   }
 }
 
-@media only screen and (max-width: 370px) {
+@media only screen and (max-width: 380px) {
   .containerResize {
     margin-top: 30%;
   }

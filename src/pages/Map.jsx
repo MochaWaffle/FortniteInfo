@@ -18,6 +18,7 @@ export default function Map() {
                 <div className="mapContainer">
                     <a href={mapLink} target="_blank"><img src={mapLink} alt="Image could not load. Image was: Current Fortnite POIS Map."></img></a>
                 </div>
+                <p> Click <a href={mapLink} target="_blank">image</a> to enlarge it.</p>
             </div>
         </>
     )
