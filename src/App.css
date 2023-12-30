@@ -19,7 +19,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 75vh;
+  height: 65vh;
 }
 .homeTitle {
   font-size: 50px;

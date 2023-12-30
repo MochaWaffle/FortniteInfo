@@ -13,9 +13,11 @@ export default function Map() {
 
     return (
         <>
-            <h1>Map</h1>
-            <div className="mapContainer">
-                <a href={mapLink} target="_blank"><img src={mapLink} alt="Image could not load. Image was: Current Fortnite POIS Map."></img></a>
+            <div className="containerResize">
+                <h1>Map</h1>
+                <div className="mapContainer">
+                    <a href={mapLink} target="_blank"><img src={mapLink} alt="Image could not load. Image was: Current Fortnite POIS Map."></img></a>
+                </div>
             </div>
         </>
     )

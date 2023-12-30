@@ -14,17 +14,14 @@ function App() {
       <Navbar />
       <div className="container">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />}/>
+          <Route path="/home" element={<Home />}/>
           <Route path="/creatorcode" element={<CreatorCode/>}/>
+          <Route path="/map" element={<Map/>}/>
+          <Route path="/news" element={<News/>}/>
+          <Route path="/shop" element={<Shop/>}/>
         </Routes>
-        <div className="containerResize">
-          <Routes>
-            <Route path="/map" element={<Map/>}/>
-            <Route path="/news" element={<News/>}/>
-            <Route path="/shop" element={<Shop/>} />
-          </Routes>
-        </div>
+            
       </div>
     </>
   )

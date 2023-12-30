@@ -25,9 +25,10 @@ export default function Shop() {
        
     return (
         <>
+        <div className="containerResize">
             <h1 className="shopTitle">Shop</h1>
             {shopData.length == 0 && <p>Could not retrieve shop data.</p>}
-
+        </div>
         </>
     )
 }

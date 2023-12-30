@@ -31,6 +31,7 @@ export default function News() {
   
     return (
         <>
+        <div className="containerResize">
             <h1 className="newsTitle"> {newsTitle} </h1>
             
             <div className = "newsContainer">
@@ -40,7 +41,7 @@ export default function News() {
                 
                 <a href={newsImage} target="_blank"><img src={newsImage} alt="Image could not load. Image was: Current Fortnite News Image."></img></a>
             </div>
-            
+        </div>
         </>
     )
 
