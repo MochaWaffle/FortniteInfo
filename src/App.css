@@ -26,6 +26,7 @@ html, body {
   justify-content:space-between;
   align-items: center;
   z-index: 100;
+  border: 5px solid red;
 }
 
 .header::before {
@@ -140,6 +141,7 @@ html, body {
 .container {
   margin: 1rem;
   text-align: center;
+  margin-top: 7%;
 }
 
 /* .backgroundImage {
