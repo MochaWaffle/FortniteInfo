@@ -14,6 +14,9 @@ html, body {
   background-repeat: no-repeat;
   resize: both;
   min-height: 100vh; */
+  background: url("./Images/Fortnite_Wallpaper_4.jpg") no-repeat center center fixed;
+  background-size: cover;
+  line-height: 1.6;
 }
 
 .container {
@@ -40,7 +43,7 @@ html, body {
 }
 
 .nav {
-  background-color: #01B0D3;
+  background-color: #01b0d38a;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -109,6 +112,7 @@ html, body {
   align-items: center;
   height: 75vh;
 }
+
 .codeInput {
   border:none;
   padding:10px;
@@ -254,4 +258,16 @@ html, body {
     padding: 5px;
     font-size: 17px;
   }
+}
+.parentHomeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+.homeTitle {
+  font-size: 50px;
+}
+.homeBodyText {
+  font-size: 30px;
 }
