@@ -16,11 +16,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/map" element={<Map/>}/>
-          <Route path="/news" element={<News/>}/>
-          <Route path="/shop" element={<Shop/>} />
           <Route path="/creatorcode" element={<CreatorCode/>}/>
         </Routes>
+        <div className="containerResize">
+          <Routes>
+            <Route path="/map" element={<Map/>}/>
+            <Route path="/news" element={<News/>}/>
+            <Route path="/shop" element={<Shop/>} />
+          </Routes>
+        </div>
       </div>
     </>
   )

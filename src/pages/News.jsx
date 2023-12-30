@@ -31,7 +31,7 @@ export default function News() {
   
     return (
         <>
-            <h1> {newsTitle} </h1>
+            <h1 className="newsTitle"> {newsTitle} </h1>
             
             <div className = "newsContainer">
                 <div className="newsText">

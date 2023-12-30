@@ -25,7 +25,7 @@ export default function Shop() {
        
     return (
         <>
-            <h1>Shop (coming soon...)</h1>
+            <h1 className="shopTitle">Shop</h1>
             {shopData.length == 0 && <p>Could not retrieve shop data.</p>}
 
         </>
