@@ -1,5 +1,3 @@
-import Fortnite_Wallpaper from '../Images/Fortnite_Wallpaper.jpg'
-
 function Home() {
     return (
         <>
