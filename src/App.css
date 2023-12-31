@@ -510,7 +510,7 @@ html, body {
 }
 
 .card-image {
-  background-color: aqua;
+  background-color: rgb(0, 0, 0);
   height: 170px;
   margin-bottom: 15px;
   background-size: cover;
