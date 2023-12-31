@@ -41,7 +41,7 @@ export default function News() {
                 
                 <a href={newsImage} target="_blank"><img src={newsImage} alt="Image could not load. Image was: Current Fortnite News Image."></img></a>
                 <div className="newsText">
-                    <p>Click <a href={newsImage}>image</a> to enlarge it.</p>
+                    <p>Click <a href={newsImage} target="_blank">image</a> to enlarge it.</p>
                 </div>
             </div>
         </div>
