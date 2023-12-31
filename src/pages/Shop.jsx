@@ -30,15 +30,28 @@ export default function Shop() {
         <div className="containerResize">
             <h1 className="shopTitle">Shop</h1>
             {shopData.length == 0 && <p>Could not retrieve shop data.</p>}
-            {shopEntries.map((entries, index) =>
+            
+            <section className="cardContainer">
+                <div className="card">
+                    <div className="card-image"></div>
+                    <h2 className="cardTextColor">Title</h2>
+                    <p className="cardTextColor">Text</p>
+                    <a href="">READ MORE</a>
+                </div>
+            </section>
+            
+            {/* {shopEntries.map((entries, index) =>
                 
                 {if (entries.bundle !== null) {
                     return (
                         <>
-                            <br />
-                            <p key={index}>Bundle {index}: {entries.bundle.name}</p>
-                            <p>Image: {entries.bundle.image} </p>
-                            <p> Price: {entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)</p>
+                            <div key={index}>
+                                <br />
+                                <p>Bundle {index}: {entries.bundle.name}</p>
+                                <p>Image: {entries.bundle.image} </p>
+                                <p> Price: {entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)</p>
+                            </div>
+                            
                         </>
                     )
                 } else {
@@ -46,19 +59,21 @@ export default function Shop() {
                         <>
                             {entries.items.map((item, index) =>
                                 <>
-                                    <br />
-                                    <p key={index}> Item: {item.name}</p>
-                                    <p> Item Description: {item.description}</p>
-                                    <p> Item Price: {entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off)</p>
-                                    <p>Item Rarity: {item.rarity.displayValue}</p>
-                                    <p>Item Image: {item.images.icon}</p>
+                                    <div key={index}>
+                                        <br />
+                                        <p> Item: {item.name}</p>
+                                        <p> Item Description: {item.description}</p>
+                                        <p> Item Price: {entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off)</p>
+                                        <p>Item Rarity: {item.rarity.displayValue}</p>
+                                        <p>Item Image: {item.images.icon}</p>
+                                    </div>
                                 </>
                             )}
                         </>
                     );
                 }}
                  
-            )}
+            )} */}
         </div>
         </>
     )

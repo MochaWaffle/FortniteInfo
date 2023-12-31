@@ -495,3 +495,50 @@ html, body {
     margin-bottom: 5px;
   }
 }
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  width: 270px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.card-image {
+  background-color: aqua;
+  height: 170px;
+  margin-bottom: 15px;
+  background-size: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.card p {
+  padding: 10px;
+}
+
+.card a {
+  background-color: black;
+  color: white;
+  padding: 15px 20px;
+  display: block;
+  text-align: center;
+  margin: 20px 50px;
+  text-decoration: none;
+}
+
+.cardTextColor {
+  color: black;
+}
+
+.card:hover {
+  background-color: rgb(62, 62, 62);
+  .cardTextColor {color: white;}
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: all 1s ease;
+}
