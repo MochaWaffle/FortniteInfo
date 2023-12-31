@@ -39,21 +39,11 @@ export default function Shop() {
                             <p key={index}>Bundle {index}: {entries.bundle.name}</p>
                             <p>Image: {entries.bundle.image} </p>
                             <p> Price: {entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)</p>
-
-                            {/* {entries.items.map((item, index) =>
-                                <>
-                                    <p key={index}> Item: {item.name}</p>
-                                    <p> Item Description: {item.description}</p>
-                                    <p>Item Rarity: {item.rarity.displayValue}</p>
-                                    <p>Item Image: {item.images.icon}</p>
-                                </>
-                            )} */}
                         </>
                     )
                 } else {
                     return (
                         <>
-                            
                             {entries.items.map((item, index) =>
                                 <>
                                     <br />
