@@ -106,30 +106,61 @@ export default function Shop() {
                                 </div>
                             </>
                         )
-                    } else {
-                        return (
-                            <>
-                                {entries.items.map((item) =>
-                                    <>                            
-                                        <div className="card" style={{backgroundImage: `url(${rarityBackground[item.rarity.value]})`}}>
-                                            <div className="card-image" style={{ backgroundImage: `url(${item.images.icon})`}}></div>
-                                            <h2 className="cardTextColor">{item.name}</h2>
-                                            <p className="cardTextColor"><i>{item.description}</i></p>
-                                            <p className="cardTextColor">Rarity: {item.rarity.displayValue}</p>
-                                            {entries.regularPrice - entries.finalPrice > 0 &&
-                                                <a href="">{entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)</a>
-                                            }
+                    } 
+                    // else {
+                    //     return (
+                    //         <>
+                    //             {entries.items.map((item) =>
+                    //                 <>                            
+                    //                     <div className="card" style={{backgroundImage: `url(${rarityBackground[item.rarity.value]})`}}>
+                    //                         <div className="card-image" style={{ backgroundImage: `url(${item.images.icon})`}}></div>
+                    //                         <h2 className="cardTextColor">{item.name}</h2>
+                    //                         <p className="cardTextColor"><i>{item.description}</i></p>
+                    //                         <p className="cardTextColor">Rarity: {item.rarity.displayValue}</p>
+                    //                         {entries.regularPrice - entries.finalPrice > 0 &&
+                    //                             <a href="">{entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)</a>
+                    //                         }
                                             
-                                            {entries.regularPrice - entries.finalPrice <= 0&&
-                                                <a href="">{entries.finalPrice}</a>
-                                            }
-                                        </div>
+                    //                         {entries.regularPrice - entries.finalPrice <= 0&&
+                    //                             <a href="">{entries.finalPrice}</a>
+                    //                         }
+                    //                     </div>
                                         
-                                    </>
-                                )}
-                            </>
-                        );
-                    }}
+                    //                 </>
+                    //             )}
+                    //         </>
+                    //     );
+                    // }
+                    }
+                )}
+
+                {shopEntries.map((entries) =>
+                    
+                    {if (entries.bundle == null) {
+                            return (
+                                <>
+                                    {entries.items.map((item) =>
+                                        <>                            
+                                            <div className="card" style={{backgroundImage: `url(${rarityBackground[item.rarity.value]})`}}>
+                                                <div className="card-image" style={{ backgroundImage: `url(${item.images.icon})`}}></div>
+                                                <h2 className="cardTextColor">{item.name}</h2>
+                                                <p className="cardTextColor"><i>{item.description}</i></p>
+                                                <p className="cardTextColor">Rarity: {item.rarity.displayValue}</p>
+                                                {entries.regularPrice - entries.finalPrice > 0 &&
+                                                    <a href="">{entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)</a>
+                                                }
+                                                
+                                                {entries.regularPrice - entries.finalPrice <= 0&&
+                                                    <a href="">{entries.finalPrice}</a>
+                                                }
+                                            </div>
+                                            
+                                        </>
+                                    )}
+                                </>
+                            );
+                        } 
+                    }
                 )}
             </section>
         </div>

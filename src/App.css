@@ -540,6 +540,6 @@ html, body {
   background-color: rgb(62, 62, 62);
   .cardTextColor {color: white;}
   cursor: pointer;
-  transform: scale(1.03);
+  transform: scale(1.05);
   transition: all 1s ease;
 }
