@@ -36,10 +36,10 @@ export default function News() {
                         setStwNewsText(data.data.stw.messages[0].body);
                     }
 
-                    if (data && data.data && data.data.stw && data.data.stw.messages && data.data.stw.messages.length > 0) {
-                    setStwNewsTitle(data.data.stw.messages[0].title);
-                    setStwNewsImage(data.data.stw.messages[0].image);
-                    setStwNewsText(data.data.stw.messages[0].body);
+                    if (data && data.data && data.data.creative && data.data.creative.messages && data.data.creative.messages.length > 0) {
+                        setCreativeNewsTitle(data.data.creative.messages[0].title);
+                        setCreativeNewsImage(data.data.creative.messages[0].image);
+                        setCreativeNewsText(data.data.creative.messages[0].body);
                     }
                 }
             } catch (error) {
