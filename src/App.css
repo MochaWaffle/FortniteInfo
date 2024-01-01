@@ -506,14 +506,13 @@ html, body {
   flex-wrap: wrap;
 }
 
-.card {
-  /* background: white; */
+/* .card {
   width: 270px;
   margin: 10px;
   border-radius: 15px;
   background-size: cover;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
-}
+} */
 
 .card-image {
   /* background-color: rgb(0, 0, 0); */
@@ -545,10 +544,23 @@ html, body {
   background-color: rgb(62, 62, 62);
   .cardTextColor {color: white;}
   cursor: pointer;
-  transform: scale(1.05);
-  transition: all 1s ease;
+  transform: scale(1.03);
+  transition: all .5s ease;
 }
 
+.cardContainer > .card {
+  width: 270px;
+  margin: 10px;
+  border-radius: 15px;
+  background-size: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
+
+  transition: all .5s ease;
+}
+.cardContainer:has(.card:hover) > .card:not(:hover) {
+  scale: .8;
+  opacity: .7;
+}
 .cardPriceText img {
   max-width: 50%;
   max-height: 50%;
