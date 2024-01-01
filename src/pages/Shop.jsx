@@ -104,11 +104,11 @@ export default function Shop() {
                                         <p className="cardTextColor"><i>{entries.bundle.info}</i></p>
                                         <p className="cardTextColor">Rarity: {displayRarity}</p>
                                         {entries.regularPrice - entries.finalPrice > 0 && 
-                                            <a href="">{entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)</a>
+                                            <a>{entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)</a>
                                         }
                                         
                                         {entries.regularPrice - entries.finalPrice <= 0 && 
-                                            <a href="">{entries.finalPrice}</a>
+                                            <a>{entries.finalPrice}</a>
                                         }
                                     </div>
                                 </>
@@ -139,11 +139,11 @@ export default function Shop() {
                                                         <p className="cardTextColor"><i>{item.description}</i></p>
                                                         <p className="cardTextColor">Rarity: {item.rarity.displayValue}</p>
                                                         {entries.regularPrice - entries.finalPrice > 0 &&
-                                                            <a href="">{entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)</a>
+                                                            <a>{entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)</a>
                                                         }
                                                         
                                                         {entries.regularPrice - entries.finalPrice <= 0&&
-                                                            <a href="">{entries.finalPrice}</a>
+                                                            <a>{entries.finalPrice}</a>
                                                         }
                                                     </div>
                                                 </>
