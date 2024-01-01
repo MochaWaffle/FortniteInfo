@@ -52,7 +52,6 @@ export default function Shop() {
         'lava': lava_background,
         'rocketleague': rocket_league_background,
         'transcendent': transcendent_background,
-        'marvel': marvel_background
     }
     useEffect(() => {
         async function getShopData() {
