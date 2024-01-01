@@ -508,6 +508,7 @@ html, body {
   margin: 10px;
   border-radius: 15px;
   background-size: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75)
 }
 
 .card-image {
