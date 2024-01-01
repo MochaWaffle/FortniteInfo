@@ -104,8 +104,13 @@ html, body {
   height:700px;
   /* border: 10px solid #01B0D3; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
+  transition: all .5s ease;
 }
 
+.mapContainer img:hover {
+  transform: scale(1.01);
+  transition: all .5s ease;
+}
 /*** NEWS PAGE ***/
 .newsContainer {
   margin:auto;
@@ -113,7 +118,14 @@ html, body {
 .newsContainer img {
   width:800px;
   height:700px;
-  border: 10px solid #01B0D3;
+  /* border: 10px solid #01B0D3; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
+  transition: all .5s ease;
+}
+
+.newsContainer img:hover {
+  transform: scale(1.01);
+  transition: all .5 ease;
 }
 .newsText {
   margin:auto;
@@ -147,11 +159,15 @@ html, body {
   background-color:  #3e4040;
   color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
+  transition: all .5s ease;
 }
 .codeSubmit:hover {
   /* border: 5px solid  #696d6d; */
   background-color: #696d6d;
   color:white;
+  transform: scale(1.05);
+  transition: all .5s ease;
+  
 }
 .codeSubmit:active {
   /* border: 5px solid  #9a9c9c; */
@@ -527,9 +543,9 @@ html, body {
 }
 
 .card a {
-  background-color: black;
+  /* background-color: black; */
   color: white;
-  padding: 15px 20px;
+  /* padding: 15px 20px; */
   display: block;
   text-align: center;
   margin: 20px 50px;

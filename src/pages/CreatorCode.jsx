@@ -41,7 +41,8 @@ export default function CreatorCode() {
                     <h1 className="createrCodeTitle">Creater Code Validator</h1>
                     <input className="codeInput" type="text" onChange = {(e) => setCode(e.target.value)} onKeyDown={handleKeyPress} placeholder="Enter Code" />
                     <button className="codeSubmit" onClick= {handleSubmit}>Submit</button>
-
+                    <br />
+                    <br />
                     {isValid !== "" &&
                         <p className = {isValid}>{isValid} Creator Code.</p>                
                     }
