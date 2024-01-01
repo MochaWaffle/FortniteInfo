@@ -102,7 +102,8 @@ html, body {
 .mapContainer img {
   width:800px;
   height:700px;
-  border: 10px solid #01B0D3;
+  /* border: 10px solid #01B0D3; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
 }
 
 /*** NEWS PAGE ***/
@@ -135,22 +136,25 @@ html, body {
   padding:10px;
   margin-right:5px;
   font-size: 100%;
-  border:5px solid #01B0D3;
+  /* border:5px solid #01B0D3; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
 }
 .codeSubmit {
-  border: 5px solid  #3e4040;
+  /* border: 5px solid  #3e4040; */
+  border: none;
   padding:10px;
   font-size: 100%;
   background-color:  #3e4040;
   color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
 }
 .codeSubmit:hover {
-  border: 5px solid  #696d6d;
+  /* border: 5px solid  #696d6d; */
   background-color: #696d6d;
   color:white;
 }
 .codeSubmit:active {
-  border: 5px solid  #9a9c9c;
+  /* border: 5px solid  #9a9c9c; */
   background-color: #9a9c9c;
   color:white;
 }
@@ -508,7 +512,7 @@ html, body {
   margin: 10px;
   border-radius: 15px;
   background-size: cover;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75)
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
 }
 
 .card-image {
