@@ -18,6 +18,7 @@ import dark_series_background from '../Images/dark_series_background.gif'
 import dc_series_background from '../Images/dc_series_background.gif'
 import lamborghini_background from '../Images/lamborghini_background.png'
 import white_background from '../Images/white_background.jpg'
+import vbuck from '../Images/vbuck.png'
 
 export default function Shop() {
     const[shopData, setShopData] = useState([])
@@ -104,11 +105,19 @@ export default function Shop() {
                                         <p className="cardTextColor"><i>{entries.bundle.info}</i></p>
                                         <p className="cardTextColor">Rarity: {displayRarity}</p>
                                         {entries.regularPrice - entries.finalPrice > 0 && 
-                                            <a>{entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)</a>
+                                            <a className="cardPriceText">
+                                                <img src={vbuck} alt="Vbuck Image."/>
+                                                <br />
+                                                {entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)
+                                            </a>
                                         }
                                         
                                         {entries.regularPrice - entries.finalPrice <= 0 && 
-                                            <a>{entries.finalPrice}</a>
+                                            <a className="cardPriceText">
+                                                <img src={vbuck} alt="Vbuck Image."/>
+                                                <br />
+                                                {entries.finalPrice}
+                                            </a>
                                         }
                                     </div>
                                 </>
@@ -139,11 +148,19 @@ export default function Shop() {
                                                         <p className="cardTextColor"><i>{item.description}</i></p>
                                                         <p className="cardTextColor">Rarity: {item.rarity.displayValue}</p>
                                                         {entries.regularPrice - entries.finalPrice > 0 &&
-                                                            <a>{entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)</a>
+                                                            <a className="cardPriceText">
+                                                                <img src={vbuck} alt="Vbuck Image."/>
+                                                                <br />
+                                                                {entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)
+                                                            </a>
                                                         }
                                                         
                                                         {entries.regularPrice - entries.finalPrice <= 0&&
-                                                            <a>{entries.finalPrice}</a>
+                                                            <a className="cardPriceText">
+                                                                <img src={vbuck} alt="Vbuck Image."/>
+                                                                <br />
+                                                                {entries.finalPrice}
+                                                            </a>
                                                         }
                                                     </div>
                                                 </>
