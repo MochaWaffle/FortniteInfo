@@ -85,6 +85,7 @@ export default function Shop() {
                     
                     {if (entries.bundle !== null) {
                         const rarity = entries.items[0]?.rarity?.value;
+                        const displayRarity = entries.items[0]?.rarity?.displayValue;
                         const backgroundIMG = rarityBackground[rarity] || white_background;
 
                         return (
@@ -93,8 +94,8 @@ export default function Shop() {
                                 <div key={entries.bundle.sectionId} className="card" style={{backgroundImage: `url(${backgroundIMG})`}}>
                                     <div className="card-image" style={{ backgroundImage: `url(${entries.bundle.image})`}}></div>
                                     <h2 className="cardTextColor">{entries.bundle.name}</h2>
-                                    <p className="cardTextColor">{entries.bundle.info}</p>
-
+                                    <p className="cardTextColor"><i>{entries.bundle.info}</i></p>
+                                    <p className="cardTextColor">Rarity: {displayRarity}</p>
                                     {entries.regularPrice - entries.finalPrice > 0 && 
                                         <a href="">{entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)</a>
                                     }
@@ -113,8 +114,8 @@ export default function Shop() {
                                         <div className="card" style={{backgroundImage: `url(${rarityBackground[item.rarity.value]})`}}>
                                             <div className="card-image" style={{ backgroundImage: `url(${item.images.icon})`}}></div>
                                             <h2 className="cardTextColor">{item.name}</h2>
-                                            <p className="cardTextColor">{item.description}</p>
-
+                                            <p className="cardTextColor"><i>{item.description}</i></p>
+                                            <p className="cardTextColor">Rarity: {item.rarity.displayValue}</p>
                                             {entries.regularPrice - entries.finalPrice > 0 &&
                                                 <a href="">{entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)</a>
                                             }
