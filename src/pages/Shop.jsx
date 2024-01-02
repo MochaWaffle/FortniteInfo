@@ -17,22 +17,12 @@ import gaming_background from '../Images/gaming_background.gif'
 import dark_series_background from '../Images/dark_series_background.gif'
 import dc_series_background from '../Images/dc_series_background.gif'
 import lamborghini_background from '../Images/lamborghini_background.png'
-import white_background from '../Images/white_background.jpg'
-import vbuck from '../Images/vbuck.png'
+import CardInfo from '../components/CardInfo'
 
 export default function Shop() {
     const[shopData, setShopData] = useState([])
     const[shopEntries, setShopEntries] = useState([])
-    const[shopBundle, setShopBundle] = useState([])
-    const[shopItems, setShopItems] = useState([])
-    const rarityColor = {
-        'legendary': '#A7581F',
-        'icon': '#18858C',
-        'epic': '#612D99',
-        'rare': '#1B64A2',
-        'uncommon': '#31731B',
 
-    }
     const rarityBackground = {
         'starwars': StarWarsBackground,
         'legendary': legendary_background,
@@ -86,7 +76,7 @@ export default function Shop() {
                     {if (entries.bundle !== null) {
                             const rarity = entries.items[0]?.rarity?.value;
                             const displayRarity = entries.items[0]?.rarity?.displayValue;
-                            let backgroundIMG = white_background;
+                            let backgroundIMG = common_background;
                             
                             try {
                                 backgroundIMG = rarityBackground[rarity] 
@@ -94,31 +84,17 @@ export default function Shop() {
                                 backgroundIMG = common_background;
                             }
                             
-
                             return (
                                 <>
-                                    
-                                    <div key={entries.bundle.sectionId} className="card" style={{backgroundImage: `url(${backgroundIMG})`}}>
-                                        <div className="card-image" style={{ backgroundImage: `url(${entries.bundle.image})`}}></div>
-                                        <h2 className="cardTextColor">{entries.bundle.name}</h2>
-                                        <p className="cardTextColor"><i>{entries.bundle.info}</i></p>
-                                        <p className="cardTextColor">Rarity: {displayRarity}</p>
-                                        {entries.regularPrice - entries.finalPrice > 0 && 
-                                            <a className="cardPriceText">
-                                                <img src={vbuck} alt="Vbuck Image."/>
-                                                <br />
-                                                {entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)
-                                            </a>
-                                        }
-                                        
-                                        {entries.regularPrice - entries.finalPrice <= 0 && 
-                                            <a className="cardPriceText">
-                                                <img src={vbuck} alt="Vbuck Image."/>
-                                                <br />
-                                                {entries.finalPrice}
-                                            </a>
-                                        }
-                                    </div>
+                                    <CardInfo 
+                                        backgroundIMG = {backgroundIMG}
+                                        image = {entries.bundle.image}
+                                        title = {entries.bundle.name}
+                                        text = {entries.bundle.info}
+                                        displayRarity = {displayRarity}
+                                        priceDifference = {entries.regularPrice - entries.finalPrice}
+                                        price = {entries.finalPrice}
+                                    />
                                 </>
                             )
                         } 
@@ -128,7 +104,6 @@ export default function Shop() {
                 {shopEntries.map((entries) =>
                     
                     {if (entries.bundle == null) {
-
                             return (
                                 <>
                                     {entries.items.map((item) => {
@@ -141,27 +116,15 @@ export default function Shop() {
                                             }
                                             return (
                                                 <>                             
-                                                    <div className="card" style={{backgroundImage: `url(${backgroundIMG})`}}>
-                                                        <div className="card-image" style={{ backgroundImage: `url(${item.images.icon})`}}></div>
-                                                        <h2 className="cardTextColor">{item.name}</h2>
-                                                        <p className="cardTextColor"><i>{item.description}</i></p>
-                                                        <p className="cardTextColor">Rarity: {item.rarity.displayValue}</p>
-                                                        {entries.regularPrice - entries.finalPrice > 0 &&
-                                                            <a className="cardPriceText">
-                                                                <img src={vbuck} alt="Vbuck Image."/>
-                                                                <br />
-                                                                {entries.finalPrice} ({entries.regularPrice - entries.finalPrice} off!)
-                                                            </a>
-                                                        }
-                                                        
-                                                        {entries.regularPrice - entries.finalPrice <= 0&&
-                                                            <a className="cardPriceText">
-                                                                <img src={vbuck} alt="Vbuck Image."/>
-                                                                <br />
-                                                                {entries.finalPrice}
-                                                            </a>
-                                                        }
-                                                    </div>
+                                                    <CardInfo 
+                                                        backgroundIMG = {backgroundIMG}
+                                                        image = {item.images.icon}
+                                                        title = {item.name}
+                                                        text = {item.description}
+                                                        displayRarity = {item.rarity.displayValue}
+                                                        priceDifference = {entries.regularPrice - entries.finalPrice}
+                                                        price = {entries.finalPrice}
+                                                    />
                                                 </>
                                             )
                                         }
