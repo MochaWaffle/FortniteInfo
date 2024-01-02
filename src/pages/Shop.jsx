@@ -1,3 +1,4 @@
+import React from 'react'
 import {useEffect, useState} from 'react'
 import legendary_background from '../Images/legendary_background.jpg'
 import epic_background from '../Images/epic_background.jpg'
@@ -20,7 +21,6 @@ import lamborghini_background from '../Images/lamborghini_background.png'
 import CardInfo from '../components/CardInfo'
 
 export default function Shop() {
-    // const[shopData, setShopData] = useState([])
     const[shopEntries, setShopEntries] = useState([])
 
     const rarityBackground = {
@@ -52,11 +52,9 @@ export default function Shop() {
                 }
                 const data = await response.json();
 
-                // setShopData(data || []);
                 setShopEntries(data?.data?.featured?.entries || [])
             } catch (error) {
                 console.error('Error fetching data:', error);
-                // setShopData('Error');
                 setShopEntries('Error');
             }
         }
@@ -64,7 +62,6 @@ export default function Shop() {
         getShopData();
     }, []);
     
-    console.log(shopEntries);
     return (
         <>
         <div className="containerResize">
@@ -86,9 +83,9 @@ export default function Shop() {
                                     } catch (e) {
                                         backgroundIMG = common_background;
                                     }
-                                    
+
                                     return (
-                                        <>
+                                        <React.Fragment key={entries.sectionId}>
                                             <CardInfo 
                                                 backgroundIMG = {backgroundIMG}
                                                 image = {entries.bundle.image}
@@ -98,7 +95,7 @@ export default function Shop() {
                                                 priceDifference = {entries.regularPrice - entries.finalPrice}
                                                 price = {entries.finalPrice}
                                             />
-                                        </>
+                                        </React.Fragment>
                                     )
                                 } 
                             }
@@ -108,8 +105,7 @@ export default function Shop() {
                             
                             {if (entries.bundle == null) {
                                     return (
-                                        <>
-                                            {entries.items.map((item) => {
+                                            entries.items.map((item) => {
                                                     let backgroundIMG = common_background
 
                                                     try {
@@ -118,7 +114,7 @@ export default function Shop() {
                                                         backgroundIMG = common_background;
                                                     }
                                                     return (
-                                                        <>                             
+                                                        <React.Fragment key={item.id}>                             
                                                             <CardInfo 
                                                                 backgroundIMG = {backgroundIMG}
                                                                 image = {item.images.icon}
@@ -128,11 +124,10 @@ export default function Shop() {
                                                                 priceDifference = {entries.regularPrice - entries.finalPrice}
                                                                 price = {entries.finalPrice}
                                                             />
-                                                        </>
+                                                        </React.Fragment>
                                                     )
                                                 }
-                                            )}
-                                        </>
+                                            )
                                     );
                                     
                                 } 
