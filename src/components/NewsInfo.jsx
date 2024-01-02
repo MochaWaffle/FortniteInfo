@@ -28,4 +28,4 @@ export default function NewsInfo({newsTitle, newsText, newsImage, newsType}) {
                 }
         </>
     )
-    }
+}
