@@ -21,8 +21,9 @@ import lamborghini_background from '../Images/lamborghini_background.png'
 import CardInfo from '../components/CardInfo'
 
 export default function Shop() {
-    const[shopEntries, setShopEntries] = useState([])
-
+    const[shopEntries, setShopEntries] = useState([]);
+    const[error, setError] = useState(null);
+    
     const rarityBackground = {
         'starwars': StarWarsBackground,
         'legendary': legendary_background,
@@ -55,7 +56,7 @@ export default function Shop() {
                 setShopEntries(data?.data?.featured?.entries || [])
             } catch (error) {
                 console.error('Error fetching data:', error);
-                setShopEntries('Error');
+                setError(error);
             }
         }
 
@@ -66,16 +67,17 @@ export default function Shop() {
         <>
         <div className="containerResize">
             <h1 className="shopTitle">Shop</h1>
-            {shopEntries.length == 0 && <p>Currently no shop data in API.</p>}
+            {error && <p className="errorText">Error fetching shop data in API.</p>}
 
-            {shopEntries == 'Error' && <p className="errorText">Error fetching shop data in API.</p>}
-            {shopEntries.length > 0 && shopEntries != 'Error' &&
+            {!error && shopEntries.length === 0 && <p>Currently no shop data in API.</p>}
+
+            {!error && shopEntries.length > 0 &&
                     <section className="cardContainer">
-                        {shopEntries.map((entries) =>
+                        {shopEntries.map((entry) =>
                             
-                            {if (entries.bundle !== null) {
-                                    const rarity = entries.items[0]?.rarity?.value;
-                                    const displayRarity = entries.items[0]?.rarity?.displayValue;
+                            {if (entry.bundle !== null) {
+                                    const rarity = entry.items[0]?.rarity?.value;
+                                    const displayRarity = entry.items[0]?.rarity?.displayValue;
                                     let backgroundIMG = common_background;
                                     
                                     try {
@@ -85,15 +87,15 @@ export default function Shop() {
                                     }
 
                                     return (
-                                        <React.Fragment key={entries.sectionId}>
+                                        <React.Fragment key={entry.sectionId}>
                                             <CardInfo 
                                                 backgroundIMG = {backgroundIMG}
-                                                image = {entries.bundle.image}
-                                                title = {entries.bundle.name}
-                                                text = {entries.bundle.info}
+                                                image = {entry.bundle.image}
+                                                title = {entry.bundle.name}
+                                                text = {entry.bundle.info}
                                                 displayRarity = {displayRarity}
-                                                priceDifference = {entries.regularPrice - entries.finalPrice}
-                                                price = {entries.finalPrice}
+                                                priceDifference = {entry.regularPrice - entry.finalPrice}
+                                                price = {entry.finalPrice}
                                             />
                                         </React.Fragment>
                                     )
@@ -101,11 +103,11 @@ export default function Shop() {
                             }
                         )}
 
-                        {shopEntries.map((entries) =>
+                        {shopEntries.map((entry) =>
                             
-                            {if (entries.bundle == null) {
+                            {if (entry.bundle == null) {
                                     return (
-                                            entries.items.map((item) => {
+                                            entry.items.map((item) => {
                                                     let backgroundIMG = common_background
 
                                                     try {
@@ -121,8 +123,8 @@ export default function Shop() {
                                                                 title = {item.name}
                                                                 text = {item.description}
                                                                 displayRarity = {item.rarity.displayValue}
-                                                                priceDifference = {entries.regularPrice - entries.finalPrice}
-                                                                price = {entries.finalPrice}
+                                                                priceDifference = {entry.regularPrice - entry.finalPrice}
+                                                                price = {entry.finalPrice}
                                                             />
                                                         </React.Fragment>
                                                     )
