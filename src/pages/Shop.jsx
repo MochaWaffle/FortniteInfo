@@ -20,7 +20,7 @@ import lamborghini_background from '../Images/lamborghini_background.png'
 import CardInfo from '../components/CardInfo'
 
 export default function Shop() {
-    const[shopData, setShopData] = useState([])
+    // const[shopData, setShopData] = useState([])
     const[shopEntries, setShopEntries] = useState([])
 
     const rarityBackground = {
@@ -52,11 +52,12 @@ export default function Shop() {
                 }
                 const data = await response.json();
 
-                setShopData(data);
-                setShopEntries(data.data.featured.entries)
+                // setShopData(data || []);
+                setShopEntries(data?.data?.featured?.entries || [])
             } catch (error) {
                 console.error('Error fetching data:', error);
-                setShopData([]);
+                // setShopData('Error');
+                setShopEntries('Error');
             }
         }
 
@@ -68,74 +69,77 @@ export default function Shop() {
         <>
         <div className="containerResize">
             <h1 className="shopTitle">Shop</h1>
-            {shopData.length == 0 && <p className="errorText">Error fetching shop data in API.</p>}
+            {shopEntries.length == 0 && <p>Currently no shop data in API.</p>}
 
-            <section className="cardContainer">
-                {shopEntries.map((entries) =>
-                    
-                    {if (entries.bundle !== null) {
-                            const rarity = entries.items[0]?.rarity?.value;
-                            const displayRarity = entries.items[0]?.rarity?.displayValue;
-                            let backgroundIMG = common_background;
+            {shopEntries == 'Error' && <p className="errorText">Error fetching shop data in API.</p>}
+            {shopEntries.length > 0 && shopEntries != 'Error' &&
+                    <section className="cardContainer">
+                        {shopEntries.map((entries) =>
                             
-                            try {
-                                backgroundIMG = rarityBackground[rarity] 
-                            } catch (e) {
-                                backgroundIMG = common_background;
+                            {if (entries.bundle !== null) {
+                                    const rarity = entries.items[0]?.rarity?.value;
+                                    const displayRarity = entries.items[0]?.rarity?.displayValue;
+                                    let backgroundIMG = common_background;
+                                    
+                                    try {
+                                        backgroundIMG = rarityBackground[rarity] 
+                                    } catch (e) {
+                                        backgroundIMG = common_background;
+                                    }
+                                    
+                                    return (
+                                        <>
+                                            <CardInfo 
+                                                backgroundIMG = {backgroundIMG}
+                                                image = {entries.bundle.image}
+                                                title = {entries.bundle.name}
+                                                text = {entries.bundle.info}
+                                                displayRarity = {displayRarity}
+                                                priceDifference = {entries.regularPrice - entries.finalPrice}
+                                                price = {entries.finalPrice}
+                                            />
+                                        </>
+                                    )
+                                } 
                             }
-                            
-                            return (
-                                <>
-                                    <CardInfo 
-                                        backgroundIMG = {backgroundIMG}
-                                        image = {entries.bundle.image}
-                                        title = {entries.bundle.name}
-                                        text = {entries.bundle.info}
-                                        displayRarity = {displayRarity}
-                                        priceDifference = {entries.regularPrice - entries.finalPrice}
-                                        price = {entries.finalPrice}
-                                    />
-                                </>
-                            )
-                        } 
-                    }
-                )}
+                        )}
 
-                {shopEntries.map((entries) =>
-                    
-                    {if (entries.bundle == null) {
-                            return (
-                                <>
-                                    {entries.items.map((item) => {
-                                            let backgroundIMG = common_background
-
-                                            try {
-                                                backgroundIMG = rarityBackground[item.rarity.value];
-                                            } catch(e) {
-                                                backgroundIMG = common_background;
-                                            }
-                                            return (
-                                                <>                             
-                                                    <CardInfo 
-                                                        backgroundIMG = {backgroundIMG}
-                                                        image = {item.images.icon}
-                                                        title = {item.name}
-                                                        text = {item.description}
-                                                        displayRarity = {item.rarity.displayValue}
-                                                        priceDifference = {entries.regularPrice - entries.finalPrice}
-                                                        price = {entries.finalPrice}
-                                                    />
-                                                </>
-                                            )
-                                        }
-                                    )}
-                                </>
-                            );
+                        {shopEntries.map((entries) =>
                             
-                        } 
-                    }
-                )}
-            </section>
+                            {if (entries.bundle == null) {
+                                    return (
+                                        <>
+                                            {entries.items.map((item) => {
+                                                    let backgroundIMG = common_background
+
+                                                    try {
+                                                        backgroundIMG = rarityBackground[item.rarity.value];
+                                                    } catch(e) {
+                                                        backgroundIMG = common_background;
+                                                    }
+                                                    return (
+                                                        <>                             
+                                                            <CardInfo 
+                                                                backgroundIMG = {backgroundIMG}
+                                                                image = {item.images.icon}
+                                                                title = {item.name}
+                                                                text = {item.description}
+                                                                displayRarity = {item.rarity.displayValue}
+                                                                priceDifference = {entries.regularPrice - entries.finalPrice}
+                                                                price = {entries.finalPrice}
+                                                            />
+                                                        </>
+                                                    )
+                                                }
+                                            )}
+                                        </>
+                                    );
+                                    
+                                } 
+                            }
+                        )}
+                </section>
+            }
         </div>
         </>
     )
