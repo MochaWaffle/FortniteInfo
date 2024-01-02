@@ -21,8 +21,7 @@ export default function CardInfo({backgroundIMG, image, title, text, displayRari
                 <a className="cardPriceText">
                     <img src={vbuck} alt="Vbuck Image."/>
                     <br />
-                    {price >= 0 && price}
-                    {price < 0 && 'Price: N/A'}
+                    {price}
                 </a>
             }
         </div>

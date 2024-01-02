@@ -81,6 +81,11 @@ export default function Shop() {
                                     const bundle = entry?.bundle;
                                     const rarity = entry?.items[0]?.rarity?.value;
                                     const displayRarity = entry?.items[0]?.rarity?.displayValue ?? 'N/A';
+                                    let priceDifference = 0;
+
+                                    if (entry?.regularPrice && entry?.finalPrice) {
+                                        priceDifference = entry.regularPrice - entry.finalPrice;
+                                    }
 
                                     return (
                                         <React.Fragment key={entry.sectionId}>
@@ -90,8 +95,8 @@ export default function Shop() {
                                                 title = {bundle?.name ?? 'Name: N/A'}
                                                 text = {bundle?.info ?? 'Description: N/A'}
                                                 displayRarity = {displayRarity}
-                                                priceDifference = {(entry?.regularPrice !== null && entry?.finalPrice !== null) ? (entry?.regularPrice - entry?.finalPrice) : 0}
-                                                price = {entry?.finalPrice ?? -1}
+                                                priceDifference = {priceDifference}
+                                                price = {entry?.finalPrice ?? 'Price: N/A'}
                                             />
                                         </React.Fragment>
                                     )
@@ -104,6 +109,12 @@ export default function Shop() {
                             {if (entry.bundle == null) {
                                     return (
                                             entry.items.map((item) => {
+                                                    let priceDifference = 0;
+
+                                                    if (entry?.regularPrice && entry?.finalPrice) {
+                                                        priceDifference = entry.regularPrice - entry.finalPrice;
+                                                    }
+
                                                     return (
                                                         <React.Fragment key={item.id}>                             
                                                             <CardInfo 
@@ -112,8 +123,8 @@ export default function Shop() {
                                                                 title = {item?.name ?? 'Name: N/A'}
                                                                 text = {item?.description ?? 'Description: N/A'}
                                                                 displayRarity = {item?.rarity?.displayValue ?? 'N/A'}
-                                                                priceDifference = {(entry?.regularPrice !== null && entry?.finalPrice !== null) ? (entry?.regularPrice - entry?.finalPrice) : 0}
-                                                                price = {entry?.finalPrice ?? -1}
+                                                                priceDifference = {priceDifference}
+                                                                price = {entry?.finalPrice ?? 'Price: N/A'}
                                                             />
                                                         </React.Fragment>
                                                     )
