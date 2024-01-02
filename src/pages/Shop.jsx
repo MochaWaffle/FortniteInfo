@@ -68,7 +68,7 @@ export default function Shop() {
         <>
         <div className="containerResize">
             <h1 className="shopTitle">Shop</h1>
-            {shopData.length == 0 && <p>Could not retrieve shop data.</p>}
+            {shopData.length == 0 && <p className="errorText">Error fetching shop data in API.</p>}
 
             <section className="cardContainer">
                 {shopEntries.map((entries) =>

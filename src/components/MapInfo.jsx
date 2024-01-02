@@ -8,7 +8,7 @@ export default function MapInfo({mapType, mapLink}) {
             }
 
             {mapLink == 'Error' &&
-                <p> Error fetching {mapType.toLowerCase()} image in API.</p>
+                <p className="errorText"> Error fetching map data in API.</p>
             }
             {mapLink.length > 0 && mapLink !== 'Error' &&
                 <>

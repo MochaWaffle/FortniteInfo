@@ -48,7 +48,7 @@ export default function CreatorCode() {
                         }
 
                         {isValid === "Error" &&
-                            <p>Error fetching code data in API.</p>
+                            <p className="errorText">Error fetching creator code data in API.</p>
                         }
                     </div>
                 </div>

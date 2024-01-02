@@ -20,6 +20,9 @@ html, body {
   margin-top: 7%;
 }
 
+.errorText {
+  color: rgb(215, 3, 3);
+}
 /*** HOME ***/
 .parentHomeContainer {
   display: flex;
