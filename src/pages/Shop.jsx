@@ -18,6 +18,8 @@ import gaming_background from '../Images/gaming_background.png'
 import dark_series_background from '../Images/dark_series_background.png'
 import dc_series_background from '../Images/dc_series_background.png'
 import lamborghini_background from '../Images/lamborghini_background.png'
+import unknownIMG from '../Images/unknownIMG.jpg'
+
 import CardInfo from '../components/CardInfo'
 
 export default function Shop() {
@@ -76,26 +78,20 @@ export default function Shop() {
                         {shopEntries.map((entry) =>
                             
                             {if (entry.bundle !== null) {
-                                    const rarity = entry.items[0]?.rarity?.value;
-                                    const displayRarity = entry.items[0]?.rarity?.displayValue;
-                                    let backgroundIMG = common_background;
-                                    
-                                    try {
-                                        backgroundIMG = rarityBackground[rarity] 
-                                    } catch (e) {
-                                        backgroundIMG = common_background;
-                                    }
+                                    const bundle = entry?.bundle;
+                                    const rarity = entry?.items[0]?.rarity?.value;
+                                    const displayRarity = entry?.items[0]?.rarity?.displayValue ?? 'N/A';
 
                                     return (
                                         <React.Fragment key={entry.sectionId}>
                                             <CardInfo 
-                                                backgroundIMG = {backgroundIMG}
-                                                image = {entry.bundle.image}
-                                                title = {entry.bundle.name}
-                                                text = {entry.bundle.info}
+                                                backgroundIMG = {rarityBackground[rarity] ?? common_background}
+                                                image = {bundle?.image ?? unknownIMG}
+                                                title = {bundle?.name ?? 'Name: N/A'}
+                                                text = {bundle?.info ?? 'Description: N/A'}
                                                 displayRarity = {displayRarity}
-                                                priceDifference = {entry.regularPrice - entry.finalPrice}
-                                                price = {entry.finalPrice}
+                                                priceDifference = {(entry?.regularPrice !== null && entry?.finalPrice !== null) ? (entry?.regularPrice - entry?.finalPrice) : 0}
+                                                price = {entry?.finalPrice ?? -1}
                                             />
                                         </React.Fragment>
                                     )
@@ -108,23 +104,16 @@ export default function Shop() {
                             {if (entry.bundle == null) {
                                     return (
                                             entry.items.map((item) => {
-                                                    let backgroundIMG = common_background
-
-                                                    try {
-                                                        backgroundIMG = rarityBackground[item.rarity.value];
-                                                    } catch(e) {
-                                                        backgroundIMG = common_background;
-                                                    }
                                                     return (
                                                         <React.Fragment key={item.id}>                             
                                                             <CardInfo 
-                                                                backgroundIMG = {backgroundIMG}
-                                                                image = {item.images.icon}
-                                                                title = {item.name}
-                                                                text = {item.description}
-                                                                displayRarity = {item.rarity.displayValue}
-                                                                priceDifference = {entry.regularPrice - entry.finalPrice}
-                                                                price = {entry.finalPrice}
+                                                                backgroundIMG = {rarityBackground[item?.rarity?.value] ?? common_background}
+                                                                image = {item?.images?.icon ?? unknownIMG}
+                                                                title = {item?.name ?? 'Name: N/A'}
+                                                                text = {item?.description ?? 'Description: N/A'}
+                                                                displayRarity = {item?.rarity?.displayValue ?? 'N/A'}
+                                                                priceDifference = {(entry?.regularPrice !== null && entry?.finalPrice !== null) ? (entry?.regularPrice - entry?.finalPrice) : 0}
+                                                                price = {entry?.finalPrice ?? -1}
                                                             />
                                                         </React.Fragment>
                                                     )
