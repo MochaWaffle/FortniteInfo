@@ -9,8 +9,8 @@ export default function Map() {
         async function getMap() {
             try {
                 const response = await fetch("https://fortnite-api.com/v1/map")
-                const data = await response.json()
-
+                const data = await response.json();
+  
                 setMapWithPoisLink(data?.data?.images?.pois || '')
                 setMapWithoutPoisLink(data?.data?.images?.blank || '')
             } catch (error) {

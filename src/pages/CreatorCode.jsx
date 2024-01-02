@@ -4,21 +4,20 @@ export default function CreatorCode() {
     const[code, setCode] = useState("");
     const[isValid, setIsValid] = useState("");
 
-    function isCodeValid() {
+   async function isCodeValid() {
         if (code.trim().length > 0) {
-            fetch('https://fortnite-api.com/v2/creatorcode?name=' + code)
-            .then((response) => response.json())
-            .then((data) => {    
-                if (data.status === 404) {
+            try {
+                const response = await fetch('https://fortnite-api.com/v2/creatorcode?name=' + code)
+                const data = await response.json();
+                
+                if (data?.data?.status === "ACTIVE") {
+                    setIsValid("Valid");
+                } else {
                     setIsValid("Invalid");
-                } else if (data.status === 200) {
-                    if (data.data.status === "ACTIVE") {
-                        setIsValid("Valid");
-                    } else {
-                        setIsValid("Invalid");
-                    }
                 }
-            });
+            } catch (error) {
+                setIsValid('Error')
+            }
         } else {
             setIsValid("");
         }
@@ -43,8 +42,12 @@ export default function CreatorCode() {
                     <button className="codeSubmit" onClick= {handleSubmit}>Submit</button>
                     <br />
                     <br />
-                    {isValid !== "" &&
+                    {isValid !== "" && isValid !== "Error" &&
                         <p className = {isValid}>{isValid} Creator Code.</p>                
+                    }
+
+                    {isValid === "Error" &&
+                        <p>Error fetching code data in API.</p>
                     }
                 </div>
             </div>

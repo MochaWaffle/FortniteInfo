@@ -12,7 +12,7 @@ export default function useNews() {
           try {
             const response = await fetch('https://fortnite-api.com/v2/news');
             const data = await response.json();
-     
+            
             setNewsData(data.data);
           } catch (error) {
             console.log("Error fetching news API data.")
