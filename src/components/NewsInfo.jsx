@@ -4,7 +4,7 @@ export default function NewsInfo({newsTitle, newsText, newsImage, newsType}) {
             <h1 className="newsTitle">{newsType} News</h1>
                 {newsTitle.length > 0 && newsTitle !== "Error" &&
                     <>
-                        <h2> {newsTitle} </h2>
+                        <h1 className="newsTitle"> {newsTitle} </h1>
                     
                         <div className = "newsContainer">
                             <div className="newsText">
@@ -20,11 +20,11 @@ export default function NewsInfo({newsTitle, newsText, newsImage, newsType}) {
                 }
                 
                 {newsTitle == "Error" &&
-                    <h2> Error fetching {newsType} news data.</h2>
+                    <h1 className="newsTitle"> Error fetching {newsType} news data.</h1>
                 }
 
                 {newsTitle.length == 0 &&
-                    <h2> Currently no {newsType} news.</h2>
+                    <h1 className="newsTitle"> Currently no {newsType} news.</h1>
                 }
         </>
     )

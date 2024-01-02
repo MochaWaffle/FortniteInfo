@@ -14,6 +14,12 @@ html, body {
   line-height: 1.6;
 }
 
+.container {
+  margin: 1rem;
+  text-align: center;
+  margin-top: 7%;
+}
+
 /*** HOME ***/
 .parentHomeContainer {
   display: flex;
@@ -110,10 +116,12 @@ html, body {
   transform: scale(1.01);
   transition: all .5s ease;
 }
+
 /*** NEWS PAGE ***/
 .newsContainer {
   margin:auto;
 }
+
 .newsContainer img {
   width:800px;
   height:700px;
@@ -125,6 +133,11 @@ html, body {
   transform: scale(1.01);
   transition: all .5 ease;
 }
+
+.newsTitle {
+  margin-bottom: 5px;
+}
+
 .newsText {
   margin:auto;
   width:800px;
@@ -133,7 +146,64 @@ html, body {
   font-size: 17px;
 }
 
-/*** CREATER CODE PAGE ***/
+/*** SHOP ***/
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-image {
+  height: 170px;
+  margin-bottom: 15px;
+  background-size: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.card p {
+  padding: 10px;
+}
+
+.card a {
+  color: white;
+  display: block;
+  text-align: center;
+  margin: 20px 50px;
+  text-decoration: none;
+}
+
+.cardTextColor {
+  color: white;
+}
+
+.card:hover {
+  background-color: rgb(62, 62, 62);
+  .cardTextColor {color: white;}
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: all .5s ease;
+}
+
+.cardContainer > .card {
+  width: 270px;
+  margin: 10px;
+  border-radius: 15px;
+  background-size: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
+
+  transition: all .5s ease;
+}
+.cardContainer:has(.card:hover) > .card:not(:hover) {
+  scale: .8;
+  opacity: .7;
+}
+.cardPriceText img {
+  max-width: 50%;
+  max-height: 50%;
+  object-fit: contain;
+}
+
+/*** CREATOR CODE PAGE ***/
 .parentCodeContainer {
   display: flex;
   justify-content: center;
@@ -144,13 +214,11 @@ html, body {
 .codeInput {
   border:none;
   padding:10px;
-  margin-right:5px;
+  margin-right: 10px;
   font-size: 100%;
-  /* border:5px solid #01B0D3; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
 }
 .codeSubmit {
-  /* border: 5px solid  #3e4040; */
   border: none;
   padding:10px;
   font-size: 100%;
@@ -169,6 +237,14 @@ html, body {
 .codeSubmit:active {
   background-color: #9a9c9c;
   color:white;
+}
+
+.creatorCodeTitle {
+  margin-bottom: 15px;
+}
+
+.codeText {
+  margin-top: 25px;
 }
 .Valid {
   color: rgb(0, 255, 0);
@@ -235,11 +311,6 @@ html, body {
     transition-delay: calc(.15s * var(--i));
   }
 }
-.container {
-  margin: 1rem;
-  text-align: center;
-  margin-top: 7%;
-}
 
 /*** Container Responsive Design ***/
 @media only screen and (max-width: 1380px) {
@@ -248,41 +319,47 @@ html, body {
   }
 }
 
+/* Container */
 @media only screen and (max-width: 1000px) {
   .containerResize {
     margin-top: 15%;
   }
 }
 
+/* Container */
 @media only screen and (max-width: 620px) {
   .containerResize {
     margin-top: 20%;
   }
 }
 
+/* Container */
 @media only screen and (max-width: 500px) {
   .containerResize {
     margin-top: 25%;
   }
 }
 
+/* Container */
 @media only screen and (max-width: 380px) {
   .containerResize {
     margin-top: 30%;
   }
 }
 
+/* Container */
 @media only screen and (max-width: 335px) {
   .containerResize {
     margin-top: 35%;
   }
 }
+
+/* Container */
 @media only screen and (max-width: 300px) {
   .containerResize {
     margin-top: 40%;
   }
 }
-/*** Map and News Image and News Text Responsive Design ***/
 
 /* Map and News */
 @media only screen and (max-width: 835px){
@@ -291,46 +368,42 @@ html, body {
     height:400px;
   }
   
-  .newsTitle {
-    margin-bottom: 5px;
-  }
   .newsContainer img {
     width:500px;
     height:400px;
   }
 
   .newsText {
-    margin:auto;
     width:500px;
-    height:20%;
-    padding: 5px;
     font-size: 17px;
   }
 }
 
-/* Map and News */
-@media only screen and (max-width: 520px){
+/* Map */
+@media only screen and (max-width: 540px){
   .mapContainer img {
     width:400px;
     height:400px;
   }
 }
 
-/* Map and News */
-@media only screen and (max-width: 420px){
+/* Map */
+@media only screen and (max-width: 430px){
   .mapContainer img {
     width:300px;
     height:300px;
   }
 }
 
-@media only screen and (max-width: 320px){
+/* Map */
+@media only screen and (max-width: 330px){
   .mapContainer img {
     width:250px;
     height:250px;
   }
 }
 
+/* Map */
 @media only screen and (max-width: 270px){
   .mapContainer img {
     width:230px;
@@ -341,7 +414,8 @@ html, body {
     margin-top: 45%;
   }
 }
-/* News only */
+
+/* News */
 @media only screen and (max-width: 535px){
   .newsContainer img {
     width:430px;
@@ -351,15 +425,12 @@ html, body {
     font-size: 25px;
   }
   .newsText {
-    margin:auto;
     width:430px;
-    height:20%;
-    padding: 5px;
     font-size: 15px;
   }
 }
 
-/* News only */
+/* News */
 @media only screen and (max-width: 465px){
   .newsContainer img {
     width:400px;
@@ -367,15 +438,12 @@ html, body {
   }
   
   .newsText {
-    margin:auto;
     width:400px;
-    height:20%;
-    padding: 5px;
     font-size: 15px;
   }
 }
 
-/* NEWS ONLY */
+/* News */
 @media only screen and (max-width: 445px){
   .newsContainer img {
     width:370px;
@@ -386,15 +454,12 @@ html, body {
     font-size: 25px;
   }
   .newsText {
-    margin:auto;
     width:370px;
-    height:20%;
-    padding: 5px;
     font-size: 15px;
   }
 }
 
-/* NEWS ONLY */
+/* News */
 @media only screen and (max-width: 400px){
   .newsContainer img {
     width:340px;
@@ -405,16 +470,13 @@ html, body {
     font-size: 25px;
   }
   .newsText {
-    margin:auto;
     width:340px;
-    height:20%;
-    padding: 5px;
     font-size: 14px;
   }
 }
 
-/* NEWS ONLY */
-@media only screen and (max-width: 355px){
+/* News */
+@media only screen and (max-width: 365px){
   .newsContainer img {
     width:310px;
     height:280px;
@@ -424,16 +486,13 @@ html, body {
     font-size: 23px;
   }
   .newsText {
-    margin:auto;
     width:310px;
-    height:20%;
-    padding: 5px;
     font-size: 14px;
   }
 }
 
-/* NEWS ONLY */
-@media only screen and (max-width: 330px){
+/* News */
+@media only screen and (max-width: 335px){
   .newsContainer img {
     width:280px;
     height:250px;
@@ -443,16 +502,13 @@ html, body {
     font-size: 20px;
   }
   .newsText {
-    margin:auto;
     width:280px;
-    height:20%;
-    padding: 5px;
     font-size: 13px;
   }
 }
 
-/* NEWS ONLY */
-@media only screen and (max-width: 300px){
+/* News */
+@media only screen and (max-width: 305px){
   .newsContainer img {
     width:250px;
     height:220px;
@@ -462,16 +518,13 @@ html, body {
     font-size: 18px;
   }
   .newsText {
-    margin:auto;
     width:250px;
-    height:20%;
-    padding: 5px;
     font-size: 12px;
   }
 }
 
-/* NEWS ONLY */
-@media only screen and (max-width: 270px){
+/* News */
+@media only screen and (max-width: 275px){
   .newsContainer img {
     width:220px;
     height:190px;
@@ -481,86 +534,17 @@ html, body {
     font-size: 16px;
   }
   .newsText {
-    margin:auto;
-    width:250px;
-    height:20%;
-    padding: 5px;
+    width:220px;
     font-size: 11px;
   }
 }
-/*** CREATER CODE RESPONSIVE DESIGN ***/
-@media only screen and (max-width: 370px) {
-  .createrCodeTitle {
-    font-size: 25px;
-  }
+
+/*** CREATOR CODE RESPONSIVE DESIGN ***/
+@media only screen and (max-width: 320px) {
   .codeInput {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
   }
-}
-
-.cardContainer {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* .card {
-  width: 270px;
-  margin: 10px;
-  border-radius: 15px;
-  background-size: cover;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
-} */
-
-.card-image {
-  /* background-color: rgb(0, 0, 0); */
-  height: 170px;
-  margin-bottom: 15px;
-  background-size: cover;
-  border-radius: 15px 15px 0 0;
-}
-
-.card p {
-  padding: 10px;
-}
-
-.card a {
-  /* background-color: black; */
-  color: white;
-  /* padding: 15px 20px; */
-  display: block;
-  text-align: center;
-  margin: 20px 50px;
-  text-decoration: none;
-}
-
-.cardTextColor {
-  color: white;
-}
-
-.card:hover {
-  background-color: rgb(62, 62, 62);
-  .cardTextColor {color: white;}
-  cursor: pointer;
-  transform: scale(1.03);
-  transition: all .5s ease;
-}
-
-.cardContainer > .card {
-  width: 270px;
-  margin: 10px;
-  border-radius: 15px;
-  background-size: cover;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
-
-  transition: all .5s ease;
-}
-.cardContainer:has(.card:hover) > .card:not(:hover) {
-  scale: .8;
-  opacity: .7;
-}
-.cardPriceText img {
-  max-width: 50%;
-  max-height: 50%;
-  object-fit: contain;
+  .codeText {
+    margin-bottom: 20px;
+  }
 }

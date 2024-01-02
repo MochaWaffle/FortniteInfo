@@ -37,18 +37,20 @@ export default function CreatorCode() {
         <>
             <div className="parentCodeContainer">
                 <div className="codeContainer">
-                    <h1 className="createrCodeTitle">Creater Code Validator</h1>
+                    <h1 className="creatorCodeTitle">Creator Code Validator</h1>
                     <input className="codeInput" type="text" onChange = {(e) => setCode(e.target.value)} onKeyDown={handleKeyPress} placeholder="Enter Code" />
                     <button className="codeSubmit" onClick= {handleSubmit}>Submit</button>
                     <br />
-                    <br />
-                    {isValid !== "" && isValid !== "Error" &&
-                        <p className = {isValid}>{isValid} Creator Code.</p>                
-                    }
+                    {/* <br /> */}
+                    <div className="codeText">
+                        {isValid !== "" && isValid !== "Error" &&
+                            <p className = {isValid}>{isValid} Creator Code.</p>                
+                        }
 
-                    {isValid === "Error" &&
-                        <p>Error fetching code data in API.</p>
-                    }
+                        {isValid === "Error" &&
+                            <p>Error fetching code data in API.</p>
+                        }
+                    </div>
                 </div>
             </div>
         </>
