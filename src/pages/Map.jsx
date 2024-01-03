@@ -4,7 +4,8 @@ import MapInfo from '../components/MapInfo';
 export default function Map() {
     const [mapWithPoisLink, setMapWithPoisLink] = useState('');
     const [mapWithoutPoisLink, setMapWithoutPoisLink] = useState('');
-    
+    const [error, setError] = useState(null);
+
     useEffect(() => {
         async function getMap() {
             try {
@@ -14,8 +15,7 @@ export default function Map() {
                 setMapWithPoisLink(data?.data?.images?.pois || '')
                 setMapWithoutPoisLink(data?.data?.images?.blank || '')
             } catch (error) {
-                setMapWithPoisLink('Error')
-                setMapWithoutPoisLink('Error')
+                setError(error)
             }
         }
 
@@ -28,12 +28,14 @@ export default function Map() {
                 <MapInfo 
                     mapType = "Map With POIS"
                     mapLink = {mapWithPoisLink}
+                    error = {error}
                 />
                 <br />
 
                 <MapInfo 
                     mapType = "Map Without POIS"
                     mapLink = {mapWithoutPoisLink}
+                    error = {error}
                 />
             </div>
         </>

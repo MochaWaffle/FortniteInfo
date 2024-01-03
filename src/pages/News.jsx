@@ -2,7 +2,11 @@ import NewsInfo from '../components/NewsInfo';
 import useNews from '../components/useNews';
 
 export default function News() {
-    const newsData = useNews();
+    const data = useNews();
+
+    const newsData = data[0];
+    const error = data[1];
+
     return (
         <>
             <div className="containerResize">
@@ -11,6 +15,7 @@ export default function News() {
                     newsText = {newsData?.br?.motds[0]?.body || ''}
                     newsImage = {newsData?.br?.motds[0]?.image || ''}
                     newsType = 'Battle Royale'
+                    error = {error}
                 />
                 <br />
                 <br />
@@ -19,6 +24,7 @@ export default function News() {
                     newsText = {newsData?.stw?.messages[0]?.body || ''}
                     newsImage = {newsData?.stw?.messages[0]?.image || ''}
                     newsType = 'Save The World'
+                    error = {error}
                 />
                 <br />
                 <br />
@@ -27,6 +33,7 @@ export default function News() {
                     newsText = {newsData?.creative?.motds[0]?.body || ''}
                     newsImage = {newsData?.creative?.motds[0]?.image || ''}
                     newsType= 'Creative'
+                    error = {error}
                 />
             </div>
         </>

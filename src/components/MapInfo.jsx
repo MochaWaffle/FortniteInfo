@@ -1,16 +1,16 @@
-export default function MapInfo({mapType, mapLink}) {
+export default function MapInfo({mapType, mapLink, error}) {
     return (
         <>
             <h1>{mapType}</h1>
 
-            {mapLink.length == 0 &&
+            {!error && mapLink.length == 0 &&
                 <p> Currently no {mapType.toLowerCase()} in API.</p>
             }
 
-            {mapLink == 'Error' &&
-                <p className="errorText"> Error fetching map data in API.</p>
+            {error &&
+                <p className="errorText"> Error: {error.toString()}</p>
             }
-            {mapLink.length > 0 && mapLink !== 'Error' &&
+            {!error && mapLink.length > 0 &&
                 <>
                     <div className="mapContainer">
                         <a href={mapLink} target="_blank"><img src={mapLink} alt={`Image could not load. Image was: Current Fortnite ${mapType}.`}></img></a>

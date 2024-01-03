@@ -69,7 +69,7 @@ export default function Shop() {
         <>
         <div className="containerResize">
             <h1 className="shopTitle">Shop</h1>
-            {error && <p className="errorText">Error fetching shop data in API.</p>}
+            {error && <p className="errorText">Error: {error.toString()}</p>}
 
             {!error && shopEntries.length === 0 && <p>Currently no shop data in API.</p>}
 

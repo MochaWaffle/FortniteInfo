@@ -6,6 +6,7 @@ export default function useNews() {
       stw: {messages: [{ title: '', body: '', image: ''}]},
       creative: {motds: [{ title: '', body: '', image: ''}]}
     });
+    const[error, setError] = useState(null);
 
     useEffect(() => {
         async function fetchNews() {
@@ -16,16 +17,12 @@ export default function useNews() {
             setNewsData(data.data);
           } catch (error) {
             console.log("Error fetching news API data.")
-            setNewsData({
-              br: { motds: [{ title: 'Error', body: '', image: ''}]} ,
-              stw: {messages: [{ title: 'Error', body: '', image: ''}]},
-              creative: {motds: [{ title: 'Error', body: '', image: ''}]}
-            })
+            setError(error)
           }
         }
      
         fetchNews();
       }, []);
      
-    return newsData;
+    return [newsData, error];
 }

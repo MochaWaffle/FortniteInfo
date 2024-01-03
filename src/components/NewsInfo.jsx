@@ -1,8 +1,8 @@
-export default function NewsInfo({newsTitle, newsText, newsImage, newsType}) {
+export default function NewsInfo({newsTitle, newsText, newsImage, newsType, error}) {
     return (
         <>
             <h1>{newsType} News</h1>
-                {newsTitle.length > 0 && newsTitle !== "Error" &&
+                {!error && newsTitle.length > 0 &&
                     <>
                         <h1 className="newsTitle"> {newsTitle} </h1>
                     
@@ -19,11 +19,11 @@ export default function NewsInfo({newsTitle, newsText, newsImage, newsType}) {
                     </>
                 }
                 
-                {newsTitle == "Error" &&
-                    <p className="errorText"> Error fetching news data in API.</p>
+                {error &&
+                    <p className="errorText"> Error: {error.toString()}</p>
                 }
 
-                {newsTitle.length == 0 &&
+                {!error && newsTitle.length == 0 &&
                     <p> Currently no {newsType} news.</p>
                 }
         </>

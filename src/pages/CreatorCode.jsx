@@ -3,6 +3,7 @@ import {useState} from 'react';
 export default function CreatorCode() {
     const[code, setCode] = useState("");
     const[isValid, setIsValid] = useState("");
+    const[error, setError] = useState(null);
 
    async function isCodeValid() {
         if (code.trim().length > 0) {
@@ -16,7 +17,7 @@ export default function CreatorCode() {
                     setIsValid("Invalid");
                 }
             } catch (error) {
-                setIsValid('Error')
+                setError(error)
             }
         } else {
             setIsValid("");
@@ -41,14 +42,13 @@ export default function CreatorCode() {
                     <input className="codeInput" type="text" onChange = {(e) => setCode(e.target.value)} onKeyDown={handleKeyPress} placeholder="Enter Code" />
                     <button className="codeSubmit" onClick= {handleSubmit}>Submit</button>
                     <br />
-                    {/* <br /> */}
                     <div className="codeText">
-                        {isValid !== "" && isValid !== "Error" &&
+                        {!error && isValid !== "" &&
                             <p className = {isValid}>{isValid} Creator Code.</p>                
                         }
 
-                        {isValid === "Error" &&
-                            <p className="errorText">Error fetching creator code data in API.</p>
+                        {error &&
+                            <p className="errorText">Error: {error.toString()}</p>
                         }
                     </div>
                 </div>
