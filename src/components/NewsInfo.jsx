@@ -6,7 +6,7 @@ export default function NewsInfo({newsTitle, newsText, newsImage, newsType, erro
                         
                     
                         <div className = "newsContainer">
-                            <h2> {newsTitle} </h2>
+                            <h2 style={{color: 'black'}}> {newsTitle} </h2>
                             <div className="newsText">
                                 <p><i>{newsText}</i></p>
                             </div>
@@ -28,6 +28,7 @@ export default function NewsInfo({newsTitle, newsText, newsImage, newsType, erro
                 }
 
                 <br />
+                
         </>
     )
 }

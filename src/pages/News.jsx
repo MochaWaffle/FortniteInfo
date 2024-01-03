@@ -67,7 +67,7 @@ export default function News() {
                 >Creative News</h1> */}
                 <h1 className="newsTitle" style={{backgroundColor: 'green'}}
                 >Creative News</h1>
-                < br/>
+                <br />
                 {newsData?.creative?.motds?.map((news, index) =>
                     <React.Fragment key = {news?.id ?? index}>
                         <NewsInfo
