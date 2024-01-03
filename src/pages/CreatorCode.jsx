@@ -4,10 +4,13 @@ export default function CreatorCode() {
     const[code, setCode] = useState("");
     const[isValid, setIsValid] = useState("");
     const[error, setError] = useState(null);
+    const[loading, setLoading] = useState(false);
 
    async function isCodeValid() {
         if (code.trim().length > 0) {
             try {
+                setLoading(true)
+
                 const response = await fetch('https://fortnite-api.com/v2/creatorcode?name=' + code)
                 const data = await response.json();
                 
@@ -16,11 +19,14 @@ export default function CreatorCode() {
                 } else {
                     setIsValid("Invalid");
                 }
+                setLoading(false)
             } catch (error) {
                 setError(error)
+                setLoading(false)
             }
         } else {
             setIsValid("");
+            setLoading(false)
         }
     }
     
@@ -43,10 +49,13 @@ export default function CreatorCode() {
                     <button className="codeSubmit" onClick= {handleSubmit}>Submit</button>
                     <br />
                     <div className="codeText">
-                        {!error && isValid !== "" &&
+                        {!error && isValid !== "" && !loading &&
                             <p className = {isValid}>{isValid} Creator Code.</p>                
                         }
 
+                        {!error && isValid !== "" && loading &&
+                            <p>Loading...</p>
+                        }
                         {error &&
                             <p className="errorText">Error: {error.toString()}</p>
                         }
