@@ -12,14 +12,15 @@ export default function News() {
         <>
             <div className="containerResize">
                 <h1>Battle Royale News</h1>
-                {newsData?.br?.motds.map((news) =>
-                    <React.Fragment key={news.id}>
+
+                {newsData?.br?.motds?.map((news, index) =>
+                    <React.Fragment key={news?.id ?? index}>
                         <NewsInfo 
-                        newsTitle = {news?.title || ''}
-                        newsText = {news?.body || ''}
-                        newsImage = {news?.image || ''}
-                        newsType = 'Battle Royale'
-                        error = {error}
+                            newsTitle = {news?.title || ''}
+                            newsText = {news?.body || ''}
+                            newsImage = {news?.image || ''}
+                            newsType = 'Battle Royale'
+                            error = {error}
                         />
                     </React.Fragment>
                     
@@ -35,8 +36,8 @@ export default function News() {
                 <br />
                 <br />
                 <h1>Save The World News</h1>
-                {newsData?.stw?.messages.map((news) =>
-                    <>
+                {newsData?.stw?.messages?.map((news, index) =>
+                    <React.Fragment key = {news?.id ?? index}>
                         <NewsInfo
                             newsTitle = {news?.title || ''}
                             newsText = {news?.body || ''}
@@ -44,7 +45,7 @@ export default function News() {
                             newsType = 'Save The World'
                             error = {error}
                         />
-                    </>
+                    </React.Fragment>
                 ) ??
                     <NewsInfo 
                         newsTitle = ''
@@ -57,8 +58,8 @@ export default function News() {
                 <br />
                 <br />
                 <h1>Creative News</h1>
-                {newsData?.creative?.motds.map((news) =>
-                    <React.Fragment key = {news.id}>
+                {newsData?.creative?.motds?.map((news, index) =>
+                    <React.Fragment key = {news?.id ?? index}>
                         <NewsInfo
                             newsTitle = {news?.title || ''}
                             newsText = {news?.body || ''}
