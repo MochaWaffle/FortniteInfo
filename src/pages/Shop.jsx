@@ -89,7 +89,7 @@ export default function Shop() {
                                     }
 
                                     return (
-                                        <React.Fragment key={entry?.sectionId ?? index}>
+                                        <React.Fragment key={entry?.offerId ?? index}>
                                             <CardInfo 
                                                 backgroundIMG = {rarityBackground[rarity] ?? common_background}
                                                 image = {bundle?.image ?? unknownIMG}
