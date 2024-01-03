@@ -4,10 +4,9 @@ import React from 'react';
 
 export default function News() {
     const data = useNews();
-
     const newsData = data[0];
     const error = data[1];
-    console.log(newsData)
+    
     return (
         <>
             <div className="containerResize">
