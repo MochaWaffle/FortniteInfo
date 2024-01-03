@@ -10,8 +10,11 @@ export default function News() {
     return (
         <>
             <div className="containerResize">
-                <h1>Battle Royale News</h1>
-
+                {/* <h1 className="newsTitle" style={{boxShadow: '0 4px 8px 0 rgba(255, 2, 2, 0.764), 0 6px 20px 0 rgba(255, 0, 0, 0.75)'}}
+                >Battle Royale News</h1> */}
+                <h1 className="newsTitle" style={{backgroundColor: 'red'}}
+                >Battle Royale News</h1>
+                <br />
                 {newsData?.br?.motds?.map((news, index) =>
                     <React.Fragment key={news?.id ?? index}>
                         <NewsInfo 
@@ -32,9 +35,13 @@ export default function News() {
                         error = {error} 
                     />
                 }
+                {/* <br /> */}
                 <br />
+                {/* <h1 className="newsTitle" style={{boxShadow: '0 4px 8px 0 rgba(221, 2, 255, 0.764), 0 6px 20px 0 rgba(221, 2, 255, 0.764'}}
+                >Save The World News</h1> */}
+                <h1 className="newsTitle" style={{backgroundColor: 'purple'}}
+                >Save The World News</h1>
                 <br />
-                <h1>Save The World News</h1>
                 {newsData?.stw?.messages?.map((news, index) =>
                     <React.Fragment key = {news?.id ?? index}>
                         <NewsInfo
@@ -54,9 +61,13 @@ export default function News() {
                         error = {error}
                     />
                 }
+                {/* <br /> */}
                 <br />
-                <br />
-                <h1>Creative News</h1>
+                {/* <h1 className="newsTitle" style={{boxShadow: '0 4px 8px 0 rgba(2, 255, 78, 0.764), 0 6px 20px 0 rgba(2, 255, 78, 0.764)'}}
+                >Creative News</h1> */}
+                <h1 className="newsTitle" style={{backgroundColor: 'green'}}
+                >Creative News</h1>
+                < br/>
                 {newsData?.creative?.motds?.map((news, index) =>
                     <React.Fragment key = {news?.id ?? index}>
                         <NewsInfo

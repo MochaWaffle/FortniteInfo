@@ -1,12 +1,12 @@
 export default function NewsInfo({newsTitle, newsText, newsImage, newsType, error}) {
     return (
         <>
-                <br />
                 {!error && newsTitle.length > 0 &&
                     <>
-                        <h2> {newsTitle} </h2>
+                        
                     
                         <div className = "newsContainer">
+                            <h2> {newsTitle} </h2>
                             <div className="newsText">
                                 <p><i>{newsText}</i></p>
                             </div>
@@ -26,6 +26,8 @@ export default function NewsInfo({newsTitle, newsText, newsImage, newsType, erro
                 {!error && newsTitle.length == 0 &&
                     <p> Currently no {newsType} news.</p>
                 }
+
+                <br />
         </>
     )
 }

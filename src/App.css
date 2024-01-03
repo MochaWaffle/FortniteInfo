@@ -138,7 +138,14 @@ html, body {
 }
 
 .newsTitle {
-  margin-bottom: 5px;
+  margin: auto;
+  /* margin-bottom: 5px; */
+  /* background-color: rgb(255, 0, 0); */
+  /* border: 5px solid black; */
+  border-radius: 15px;
+  min-width: auto;
+  max-width: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.764);
 }
 
 .newsText {
@@ -421,9 +428,9 @@ html, body {
     width:430px;
     height:400px;
   }
-  .newsTitle {
+  /* .newsTitle {
     font-size: 25px;
-  }
+  } */
   .newsText {
     width:430px;
     font-size: 15px;
@@ -450,9 +457,9 @@ html, body {
     height:340px;
   }
   
-  .newsTitle {
+  /* .newsTitle {
     font-size: 25px;
-  }
+  } */
   .newsText {
     width:370px;
     font-size: 15px;
@@ -466,9 +473,9 @@ html, body {
     height:310px;
   }
   
-  .newsTitle {
+  /* .newsTitle {
     font-size: 25px;
-  }
+  } */
   .newsText {
     width:340px;
     font-size: 14px;
@@ -482,9 +489,9 @@ html, body {
     height:280px;
   }
   
-  .newsTitle {
+  /* .newsTitle {
     font-size: 23px;
-  }
+  } */
   .newsText {
     width:310px;
     font-size: 14px;
@@ -498,9 +505,9 @@ html, body {
     height:250px;
   }
   
-  .newsTitle {
+  /* .newsTitle {
     font-size: 20px;
-  }
+  } */
   .newsText {
     width:280px;
     font-size: 13px;
@@ -514,9 +521,9 @@ html, body {
     height:220px;
   }
   
-  .newsTitle {
+  /* .newsTitle {
     font-size: 18px;
-  }
+  } */
   .newsText {
     width:250px;
     font-size: 12px;
@@ -530,9 +537,9 @@ html, body {
     height:190px;
   }
   
-  .newsTitle {
+  /* .newsTitle {
     font-size: 16px;
-  }
+  } */
   .newsText {
     width:220px;
     font-size: 11px;
