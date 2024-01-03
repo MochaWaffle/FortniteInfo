@@ -7,6 +7,7 @@ export default function CreatorCode() {
     const[loading, setLoading] = useState(false);
 
    async function isCodeValid() {
+    setError(null)
         if (code.trim().length > 0) {
             try {
                 setLoading(true)
@@ -21,11 +22,11 @@ export default function CreatorCode() {
                 }
                 setLoading(false)
             } catch (error) {
-                setError(error)
+                setError("An error occurred while checking the creator code.")
                 setLoading(false)
             }
         } else {
-            setIsValid("");
+            setError("Please enter a creator code.")
             setLoading(false)
         }
     }
@@ -54,10 +55,10 @@ export default function CreatorCode() {
                         }
 
                         {!error && isValid !== "" && loading &&
-                            <p>Loading...</p>
+                            <p>Checking validity of the creator code...</p>
                         }
                         {error &&
-                            <p className="errorText">Error: {error.toString()}</p>
+                            <p className="errorText">{error}</p>
                         }
                     </div>
                 </div>
