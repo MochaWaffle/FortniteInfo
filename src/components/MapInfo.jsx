@@ -8,7 +8,7 @@ export default function MapInfo({mapType, mapLink, error}) {
             }
 
             {error &&
-                <p className="errorText"> Error: {error.toString()}</p>
+                <p className="errorText"> {error}</p>
             }
             {!error && mapLink.length > 0 &&
                 <>

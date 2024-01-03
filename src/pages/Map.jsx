@@ -8,6 +8,7 @@ export default function Map() {
 
     useEffect(() => {
         async function getMap() {
+            setError(null)
             try {
                 const response = await fetch("https://fortnite-api.com/v1/map")
                 const data = await response.json();
@@ -15,7 +16,7 @@ export default function Map() {
                 setMapWithPoisLink(data?.data?.images?.pois || '')
                 setMapWithoutPoisLink(data?.data?.images?.blank || '')
             } catch (error) {
-                setError(error)
+                setError("An error occurred while retrieving the map data.")
             }
         }
 

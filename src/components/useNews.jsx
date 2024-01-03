@@ -10,6 +10,7 @@ export default function useNews() {
 
     useEffect(() => {
         async function fetchNews() {
+          setError(null)
           try {
             const response = await fetch('https://fortnite-api.com/v2/news');
             const data = await response.json();
@@ -17,7 +18,7 @@ export default function useNews() {
             setNewsData(data.data);
           } catch (error) {
             console.log("Error fetching news API data.")
-            setError(error)
+            setError("An error occurred while retrieving the news data.")
           }
         }
      

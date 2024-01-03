@@ -20,7 +20,7 @@ export default function NewsInfo({newsTitle, newsText, newsImage, newsType, erro
                 }
                 
                 {error &&
-                    <p className="errorText"> Error: {error.toString()}</p>
+                    <p className="errorText"> {error}</p>
                 }
 
                 {!error && newsTitle.length == 0 &&

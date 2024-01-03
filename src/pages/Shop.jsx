@@ -48,6 +48,7 @@ export default function Shop() {
     }
     useEffect(() => {
         async function getShopData() {
+            setError(null)
             try {
                 const response = await fetch('https://fortnite-api.com/v2/shop/br');
                 if (!response.ok) {
@@ -58,7 +59,7 @@ export default function Shop() {
                 setShopEntries(data?.data?.featured?.entries || [])
             } catch (error) {
                 console.error('Error fetching data:', error);
-                setError(error);
+                setError("An error occurred while retrieving shop data.");
             }
         }
 
@@ -69,7 +70,7 @@ export default function Shop() {
         <>
         <div className="containerResize">
             <h1 className="shopTitle">Shop</h1>
-            {error && <p className="errorText">Error: {error.toString()}</p>}
+            {error && <p className="errorText">{error}</p>}
 
             {!error && shopEntries.length === 0 && <p>Currently no shop data in API.</p>}
 
