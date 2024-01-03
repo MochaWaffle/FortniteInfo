@@ -1,40 +1,82 @@
 import NewsInfo from '../components/NewsInfo';
 import useNews from '../components/useNews';
+import React from 'react';
 
 export default function News() {
     const data = useNews();
 
     const newsData = data[0];
     const error = data[1];
-
+    console.log(newsData)
     return (
         <>
             <div className="containerResize">
-                <NewsInfo 
-                    newsTitle = {newsData?.br?.motds[0]?.title || ''}
-                    newsText = {newsData?.br?.motds[0]?.body || ''}
-                    newsImage = {newsData?.br?.motds[0]?.image || ''}
-                    newsType = 'Battle Royale'
-                    error = {error}
-                />
+                <h1>Battle Royale News</h1>
+                {newsData?.br?.motds.map((news) =>
+                    <React.Fragment key={news.id}>
+                        <NewsInfo 
+                        newsTitle = {news?.title || ''}
+                        newsText = {news?.body || ''}
+                        newsImage = {news?.image || ''}
+                        newsType = 'Battle Royale'
+                        error = {error}
+                        />
+                    </React.Fragment>
+                    
+                ) ??
+                    <NewsInfo
+                        newsTitle = ''
+                        newsText = ''
+                        newsImage = ''
+                        newsType = 'Battle Royale'
+                        error = {error} 
+                    />
+                }
                 <br />
                 <br />
-                <NewsInfo
-                    newsTitle = {newsData?.stw?.messages[0]?.title || ''}
-                    newsText = {newsData?.stw?.messages[0]?.body || ''}
-                    newsImage = {newsData?.stw?.messages[0]?.image || ''}
-                    newsType = 'Save The World'
-                    error = {error}
-                />
+                <h1>Save The World News</h1>
+                {newsData?.stw?.messages.map((news) =>
+                    <>
+                        <NewsInfo
+                            newsTitle = {news?.title || ''}
+                            newsText = {news?.body || ''}
+                            newsImage = {news?.image || ''}
+                            newsType = 'Save The World'
+                            error = {error}
+                        />
+                    </>
+                ) ??
+                    <NewsInfo 
+                        newsTitle = ''
+                        newsText = ''
+                        newsImage = ''
+                        newsType = 'Save The World'
+                        error = {error}
+                    />
+                }
                 <br />
                 <br />
-                <NewsInfo
-                    newsTitle = {newsData?.creative?.motds[0]?.title || ''}
-                    newsText = {newsData?.creative?.motds[0]?.body || ''}
-                    newsImage = {newsData?.creative?.motds[0]?.image || ''}
-                    newsType= 'Creative'
-                    error = {error}
-                />
+                <h1>Creative News</h1>
+                {newsData?.creative?.motds.map((news) =>
+                    <React.Fragment key = {news.id}>
+                        <NewsInfo
+                            newsTitle = {news?.title || ''}
+                            newsText = {news?.body || ''}
+                            newsImage = {news?.image || ''}
+                            newsType= 'Creative'
+                            error = {error}
+                        />
+                    </React.Fragment>
+                ) ??
+                    <NewsInfo
+                        newsTitle = ''
+                        newsText = ''
+                        newsImage = ''
+                        newsType = 'Creative'
+                        error = {error}
+                    />
+                }
+                
             </div>
         </>
     )
