@@ -76,7 +76,7 @@ export default function Shop() {
 
             {!error && shopEntries.length > 0 &&
                     <section className="cardContainer">
-                        {shopEntries.map((entry) =>
+                        {shopEntries?.map((entry, index) =>
                             
                             {if (entry.bundle !== null) {
                                     const bundle = entry?.bundle;
@@ -89,7 +89,7 @@ export default function Shop() {
                                     }
 
                                     return (
-                                        <React.Fragment key={entry.sectionId}>
+                                        <React.Fragment key={entry?.sectionId ?? index}>
                                             <CardInfo 
                                                 backgroundIMG = {rarityBackground[rarity] ?? common_background}
                                                 image = {bundle?.image ?? unknownIMG}
@@ -105,11 +105,11 @@ export default function Shop() {
                             }
                         )}
 
-                        {shopEntries.map((entry) =>
+                        {shopEntries?.map((entry) =>
                             
                             {if (entry.bundle == null) {
                                     return (
-                                            entry.items.map((item) => {
+                                            entry?.items?.map((item, itemIndex) => {
                                                     let priceDifference = 0;
 
                                                     if (entry?.regularPrice && entry?.finalPrice) {
@@ -117,7 +117,7 @@ export default function Shop() {
                                                     }
 
                                                     return (
-                                                        <React.Fragment key={item.id}>                             
+                                                        <React.Fragment key={item?.id ?? itemIndex}>                             
                                                             <CardInfo 
                                                                 backgroundIMG = {rarityBackground[item?.rarity?.value] ?? common_background}
                                                                 image = {item?.images?.icon ?? unknownIMG}
