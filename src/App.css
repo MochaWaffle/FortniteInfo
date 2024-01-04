@@ -205,8 +205,8 @@ html, body {
 }
 
 .cardPriceText img {
-  max-width: 50%;
-  max-height: 50%;
+  width: 25%;
+  height: 25%;
   object-fit: contain;
 }
 
