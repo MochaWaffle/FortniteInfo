@@ -1,27 +1,30 @@
-import Navbar from "./components/Navbar"
-import Home from "./pages/Home"
-import Map from "./pages/Map"
-import News from "./pages/News"
-import Shop from "./pages/Shop"
-import CreatorCode from "./pages/CreatorCode"
+import React, {Suspense} from 'react'
 import { Route, Routes } from "react-router-dom"
 
+
+import Navbar from "./components/Navbar"
+const Home = React.lazy(() => import("./pages/Home")) 
+const Map = React.lazy(() => import("./pages/Map")) 
+const News = React.lazy(() => import("./pages/News"))
+const Shop = React.lazy(() => import("./pages/Shop"))
+const CreatorCode = React.lazy(() => import("./pages/CreatorCode")) 
+
+
 function App() {
-  console.log('Width: ' + window.innerWidth)
-  console.log("Height: " + window.innerHeight)
   return (
     <>
       <Navbar />
       <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/home" element={<Home />}/>
-          <Route path="/creatorcode" element={<CreatorCode/>}/>
-          <Route path="/map" element={<Map/>}/>
-          <Route path="/news" element={<News/>}/>
-          <Route path="/shop" element={<Shop/>}/>
-        </Routes>
-            
+          <Suspense fallback={<p>Loading...</p>}>
+            <Routes>
+              <Route path="/" element={<Home />}/>
+              <Route path="/home" element={<Home />}/>
+              <Route path="/creatorcode" element={<CreatorCode/>}/>
+              <Route path="/map" element={<Map/>}/>
+              <Route path="/news" element={<News/>}/>
+              <Route path="/shop" element={<Shop/>}/>
+            </Routes>
+          </Suspense>
       </div>
     </>
   )

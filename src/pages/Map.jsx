@@ -1,5 +1,7 @@
+import React, {Suspense} from 'react'
 import {useEffect, useState} from 'react';
-import MapInfo from '../components/MapInfo';
+
+const MemoizedMap = React.memo(React.lazy(() => import('../components/MapInfo')))
 
 export default function Map() {
     const [mapWithPoisLink, setMapWithPoisLink] = useState('');
@@ -16,7 +18,11 @@ export default function Map() {
                 setMapWithPoisLink(data?.data?.images?.pois || '')
                 setMapWithoutPoisLink(data?.data?.images?.blank || '')
             } catch (error) {
-                setError("An error occurred while retrieving the map data.")
+                if (error instanceof SyntaxError) {
+                    setError("Invalid data recieved from server.")
+                } else {
+                    setError("An error occurred while retrieving the map data.")
+                }
             }
         }
 
@@ -26,18 +32,20 @@ export default function Map() {
     return (
         <>
             <div className="containerResize">
-                <MapInfo 
-                    mapType = "Map With POIS"
-                    mapLink = {mapWithPoisLink}
-                    error = {error}
-                />
-                <br />
+                <Suspense fallback={<p>Loading...</p>}>
+                    <MemoizedMap
+                        mapType = "Map With POIS"
+                        mapLink = {mapWithPoisLink}
+                        error = {error}
+                    />
+                    <br />
 
-                <MapInfo 
-                    mapType = "Map Without POIS"
-                    mapLink = {mapWithoutPoisLink}
-                    error = {error}
-                />
+                    <MemoizedMap 
+                        mapType = "Map Without POIS"
+                        mapLink = {mapWithoutPoisLink}
+                        error = {error}
+                    />
+                </Suspense>
             </div>
         </>
     )
