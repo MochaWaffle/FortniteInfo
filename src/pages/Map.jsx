@@ -32,7 +32,13 @@ export default function Map() {
     return (
         <>
             <div className="containerResize">
-                <Suspense fallback={<p>Loading...</p>}>
+                <Suspense fallback={
+                    <div className="parentHomeContainer">
+                        <div className="homeContainer">
+                            <p className="homeBodyText">Loading...</p>
+                        </div>
+                    </div>
+                }>
                     <MemoizedMap
                         mapType = "Map With POIS"
                         mapLink = {mapWithPoisLink}

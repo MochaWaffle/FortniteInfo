@@ -79,7 +79,13 @@ export default function Shop() {
             {!error && shopEntries.length > 0 &&
                     <section className="cardContainer">
                         
-                        <Suspense fallback={<p>Loading...</p>}>
+                        <Suspense fallback={
+                            <div className="parentHomeContainer">
+                                <div className="homeContainer">
+                                    <p className="homeBodyText">Loading...</p>
+                                </div>
+                            </div>
+                        }>
                             <BundleDisplay shopEntries={shopEntries} rarityBackground = {rarityBackground} />
                             <ItemDisplay shopEntries={shopEntries} rarityBackground = {rarityBackground} />
                         </Suspense>

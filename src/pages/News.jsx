@@ -16,7 +16,13 @@ export default function News() {
                 <h1 className="newsTitle" style={{backgroundColor: 'red'}}
                 >Battle Royale News</h1>
                 <br />
-                <Suspense fallback={<p>Loading...</p>}>
+                <Suspense fallback={
+                    <div className="parentHomeContainer">
+                        <div className="homeContainer">
+                            <p className="homeBodyText">Loading...</p>
+                        </div>
+                    </div>
+                }>
                     <BrNews newsData = {newsData} error={error}/>
                 </Suspense>
                 <br />
@@ -24,14 +30,26 @@ export default function News() {
                 <h1 className="newsTitle" style={{backgroundColor: 'purple'}}
                 >Save The World News</h1>
                 <br />
-                <Suspense fallback={<p>Loading...</p>}>
+                <Suspense fallback={
+                    <div className="parentHomeContainer">
+                        <div className="homeContainer">
+                            <p className="homeBodyText">Loading...</p>
+                        </div>
+                    </div>
+                }>
                     <StwNews newsData = {newsData} error={error}/>
                 </Suspense>
                 <br />
                 <h1 className="newsTitle" style={{backgroundColor: 'green'}}
                 >Creative News</h1>
                 <br />
-                <Suspense fallback={<p>Loading...</p>}>
+                <Suspense fallback={
+                    <div className="parentHomeContainer">
+                        <div className="homeContainer">
+                            <p className="homeBodyText">Loading...</p>
+                        </div>
+                    </div>
+                }>
                     <CreativeNews newsData = {newsData} error={error}/>
                 </Suspense>
                 

@@ -15,7 +15,13 @@ function App() {
     <>
       <Navbar />
       <div className="container">
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={
+            <div className="parentHomeContainer">
+                <div className="homeContainer">
+                    <p className="homeBodyText">Loading...</p>
+                </div>
+            </div>
+          }>
             <Routes>
               <Route path="/" element={<Home />}/>
               <Route path="/home" element={<Home />}/>
