@@ -1,4 +1,5 @@
 import React from 'react'
+import {Suspense} from 'react'
 import {useEffect, useState} from 'react'
 import legendary_background from '../Images/legendary_background.jpg'
 import epic_background from '../Images/epic_background.jpg'
@@ -18,9 +19,9 @@ import gaming_background from '../Images/gaming_background.png'
 import dark_series_background from '../Images/dark_series_background.png'
 import dc_series_background from '../Images/dc_series_background.png'
 import lamborghini_background from '../Images/lamborghini_background.png'
-import unknownIMG from '../Images/unknownIMG.jpg'
 
-import CardInfo from '../components/CardInfo'
+const BundleDisplay = React.lazy(() => import('../components/BundleDisplay'));
+const ItemDisplay = React.lazy(() => import('../components/ItemDisplay'));
 
 export default function Shop() {
     const[shopEntries, setShopEntries] = useState([]);
@@ -44,7 +45,7 @@ export default function Shop() {
         'lamborghini': lamborghini_background,
         'lava': lava_background,
         'rocketleague': rocket_league_background,
-        'transcendent': transcendent_background,
+        'transcendent': transcendent_background
     }
     useEffect(() => {
         async function getShopData() {
@@ -66,6 +67,7 @@ export default function Shop() {
         getShopData();
     }, []);
     
+
     return (
         <>
         <div className="containerResize">
@@ -76,66 +78,12 @@ export default function Shop() {
 
             {!error && shopEntries.length > 0 &&
                     <section className="cardContainer">
-                        {shopEntries?.map((entry, index) =>
-                            
-                            {if (entry.bundle !== null) {
-                                    const bundle = entry?.bundle;
-                                    const rarity = entry?.items[0]?.rarity?.value;
-                                    const displayRarity = entry?.items[0]?.rarity?.displayValue ?? 'N/A';
-                                    let priceDifference = 0;
-
-                                    if (entry?.regularPrice && entry?.finalPrice) {
-                                        priceDifference = entry.regularPrice - entry.finalPrice;
-                                    }
-
-                                    return (
-                                        <React.Fragment key={entry?.offerId ?? index}>
-                                            <CardInfo 
-                                                backgroundIMG = {rarityBackground[rarity] ?? common_background}
-                                                image = {bundle?.image ?? unknownIMG}
-                                                title = {bundle?.name ?? 'Name: N/A'}
-                                                text = {bundle?.info ?? 'Description: N/A'}
-                                                displayRarity = {displayRarity}
-                                                priceDifference = {priceDifference}
-                                                price = {entry?.finalPrice ?? 'Price: N/A'}
-                                            />
-                                        </React.Fragment>
-                                    )
-                                } 
-                            }
-                        )}
-
-                        {shopEntries?.map((entry) =>
-                            
-                            {if (entry.bundle == null) {
-                                    return (
-                                            entry?.items?.map((item, itemIndex) => {
-                                                    let priceDifference = 0;
-
-                                                    if (entry?.regularPrice && entry?.finalPrice) {
-                                                        priceDifference = entry.regularPrice - entry.finalPrice;
-                                                    }
-
-                                                    return (
-                                                        <React.Fragment key={item?.id ?? itemIndex}>                             
-                                                            <CardInfo 
-                                                                backgroundIMG = {rarityBackground[item?.rarity?.value] ?? common_background}
-                                                                image = {item?.images?.icon ?? unknownIMG}
-                                                                title = {item?.name ?? 'Name: N/A'}
-                                                                text = {item?.description ?? 'Description: N/A'}
-                                                                displayRarity = {item?.rarity?.displayValue ?? 'N/A'}
-                                                                priceDifference = {priceDifference}
-                                                                price = {entry?.finalPrice ?? 'Price: N/A'}
-                                                            />
-                                                        </React.Fragment>
-                                                    )
-                                                }
-                                            )
-                                    );
-                                    
-                                } 
-                            }
-                        )}
+                        
+                        <Suspense fallback={<p>Loading...</p>}>
+                            <BundleDisplay shopEntries={shopEntries} rarityBackground = {rarityBackground} />
+                            <ItemDisplay shopEntries={shopEntries} rarityBackground = {rarityBackground} />
+                        </Suspense>
+                        
                 </section>
             }
         </div>
