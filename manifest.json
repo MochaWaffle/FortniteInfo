@@ -9,9 +9,9 @@
     "orientation": "portrait",
     "icons": [
       {
-        "src": "./src/favicon/FortniteInfo_Favicon.svg",
-        "sizes": "96x96",
-        "type": "svg"
+        "src": "./src/Icon/FortniteInfo_Icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
       }
     ]
    }
