@@ -8,6 +8,14 @@ export default defineConfig({
     react(),
     VitePWA({
         manifest: {
+          name: "FortniteInfo",
+          short_name: "FortniteInfo",
+          display: "standalone",
+          background_color: "#086BBE",
+          theme_color: "#086BBE",
+          orientation: "portrait",
+          description: "FortniteInfo shows Fortnite's current map, news, and shop items and checks the validity of a creator code.",
+
           icons: [
             {
               src: "/icons/manifest-icon-144.png",
