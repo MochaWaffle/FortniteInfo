@@ -1,4 +1,4 @@
-import vbuck from '../Images/vbuck.jpg'
+import vbuck from '../assets/Images/vbuck.jpg'
 
 export default function CardInfo({backgroundIMG, image, title, text, displayRarity, priceDifference, price}) {
     return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import CardInfo from './CardInfo'
-import unknownIMG from '../Images/unknownIMG.jpg'
+import unknownIMG from '../assets/Images/unknownIMG.jpg'
 
 const MemoizedCardInfo = React.memo(CardInfo);
 

@@ -9,7 +9,7 @@ html, body {
   font-family: 'Roboto', sans-serif;
   background-color: #242333;
   color: white;
-  background: url("./Images/Fortnite_Wallpaper_4.jpg") no-repeat center center fixed;
+  background: url("./assets/Images/Fortnite_Wallpaper_4.jpg") no-repeat center center fixed;
   background-size: cover;
   line-height: 1.6;
 }
