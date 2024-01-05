@@ -40,6 +40,21 @@ export default defineConfig({
               purpose: "maskable"
             }
           ]
+        },
+        workbox: {
+          runtimeCaching: [{
+            urlPattern: ({ url }) => {
+              console.log("Href: " + url.href)
+              return url.href.includes("fortnite-api.com");
+            },
+            handler: "CacheFirst",
+            options: {
+              cacheName: "api-cache",
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          }]
         }
     })
   ],

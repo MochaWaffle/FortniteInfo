@@ -22,7 +22,7 @@ export default function ItemDisplay({shopEntries, rarityBackground}) {
                                                                         
                                                 <MemoizedCardInfo
                                                     key = {item?.id ?? itemIndex}
-                                                    backgroundIMG = {rarityBackground[item?.rarity?.value] ?? common_background}
+                                                    backgroundIMG = {rarityBackground[item?.rarity?.value ?? 'common'] ?? common_background}
                                                     image = {item?.images?.icon ?? unknownIMG}
                                                     title = {item?.name ?? 'Name: N/A'}
                                                     text = {item?.description ?? 'Description: N/A'}
