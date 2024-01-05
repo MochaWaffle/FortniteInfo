@@ -1,7 +1,7 @@
 {
   "name": "FortniteInfo",
   "short_name": "FortniteInfo",
-  "description": "FortniteInfo is a website that shows users Fortnite's current map images (with and without POIS), current Battle Royale, Save The World, and Creative News, and the current shop items (bundles and individual items). FortniteInfo also has a creator code page that checks whether a code is a valid creator code or not.",
+  "description": "FortniteInfo shows Fortnite's current map, news, and shop items and checks the validity of a creator code.",
   "start_url": "/",
   "display": "fullscreen",
   "background_color": "#086BBE",
