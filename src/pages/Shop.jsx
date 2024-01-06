@@ -26,6 +26,7 @@ const ItemDisplay = React.lazy(() => import('../components/ItemDisplay'));
 
 export default function Shop() {
     const [shopEntries, setShopEntries] = useState([]);
+    const[shopDate, setShopDate] = useState('');
     const [error, setError] = useState(null);
 
     const rarityBackground = {
@@ -57,10 +58,15 @@ export default function Shop() {
                     throw new Error('Failed to fetch data');
                 }
                 const data = await response.json();
+                let dateString = data?.data?.date
 
                 setShopEntries(data?.data?.featured?.entries || [])
+                
+                if (dateString.length > 0) {
+                    setShopDate(`(${dateString.split("T")[0]})`);
+                }
+                
             } catch (error) {
-                console.error('Error fetching data:', error);
                 setError("An error occurred while retrieving shop data.");
             }
         }
@@ -72,7 +78,7 @@ export default function Shop() {
     return (
         <>
             <div className="containerResize">
-                <h1 className="shopTitle">Shop</h1>
+                <h1 className="shopTitle">Shop {shopDate}</h1>
                 {error && <p className="errorText">{error}</p>}
 
                 {!error && shopEntries.length === 0 && <p>Currently no shop data in API.</p>}
