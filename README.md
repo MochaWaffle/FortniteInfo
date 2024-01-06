@@ -6,6 +6,7 @@
 
 - Website available on GitHub pages, and can be downlodable on Desktop & Mobile using PWA.
 
+
 TO EDIT CODE AND SEE CHANGES LOCALLY ON YOUR COMPUTER
 
 1. Install npm.
