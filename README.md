@@ -2,9 +2,10 @@
 
 - Responsive PWA (Progressive Web Application) that fetches data from the API: https://fortnite-api.com/.
 
-- Uses Vite + Worbox.
+- Uses Vite + Workbox.
 
 - Website available on GitHub pages, and can be downlodable on Desktop & Mobile using PWA.
+
 
 
 TO EDIT CODE AND SEE CHANGES LOCALLY ON YOUR COMPUTER
