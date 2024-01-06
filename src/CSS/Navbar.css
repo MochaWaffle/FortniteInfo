@@ -44,12 +44,28 @@
 	font-weight: 700;
 }
 
+.logo:link {
+	color: #fff;
+}
+
+.logo:visited {
+	color: #fff;
+}
+
 .navbar a {
 	font-size: 1.15rem;
 	color: white;
 	text-decoration: none;
 	font-weight: 500;
 	margin-left: 2.5rem;
+}
+
+.navbar a:link {
+	color: white;
+}
+
+.navbar a:visited {
+	color: white;
 }
 
 #check {
