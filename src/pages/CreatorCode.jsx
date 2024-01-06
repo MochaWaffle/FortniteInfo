@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 export default function CreatorCode() {
     const[code, setCode] = useState("");
@@ -7,7 +7,7 @@ export default function CreatorCode() {
     const[loading, setLoading] = useState(false);
 
    async function isCodeValid() {
-    setError(null)
+        setError(null)
         if (code.trim().length > 0) {
             try {
                 setLoading(true)
@@ -41,6 +41,7 @@ export default function CreatorCode() {
             handleSubmit(e);
         }
     }
+
     return (
         <>
             <div className="parentCodeContainer">
@@ -50,13 +51,14 @@ export default function CreatorCode() {
                     <button className="codeSubmit" onClick= {handleSubmit}>Submit</button>
                     <br />
                     <div className="codeText">
+                        {!error &&  loading &&
+                            <p>Checking validity of the creator code...</p>
+                        }
+
                         {!error && isValid !== "" && !loading &&
                             <p className = {isValid}>{isValid} Creator Code.</p>                
                         }
-
-                        {!error && isValid !== "" && loading &&
-                            <p>Checking validity of the creator code...</p>
-                        }
+                        
                         {error &&
                             <p className="errorText">{error}</p>
                         }
