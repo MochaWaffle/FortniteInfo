@@ -4,7 +4,7 @@ export default function NewsInfo({newsTitle, newsText, newsImage, newsType, erro
                 {!error && newsTitle.length > 0 &&
                     <>
                         <div className = "newsContainer">
-                            <h2 style={{color: 'black'}}> {newsTitle} </h2>
+                            <h2 style={{color: '#ffd300 '}}> {newsTitle} </h2>
                             <div className="newsText">
                                 <p><i>{newsText}</i></p>
                             </div>
