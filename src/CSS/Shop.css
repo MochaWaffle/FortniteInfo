@@ -11,10 +11,6 @@
 	border-radius: 15px 15px 0 0;
 }
 
-.card {
-	background-color: black;
-}
-
 .card p {
 	padding: 10px;
 }
@@ -32,8 +28,6 @@
 }
 
 .card:hover {
-	background-color: rgb(62, 62, 62);
-
 	.cardTextColor {
 		color: white;
 	}
