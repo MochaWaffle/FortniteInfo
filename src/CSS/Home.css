@@ -1,0 +1,24 @@
+.parentHomeContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 65vh;
+}
+
+.homeTitle {
+	font-size: 50px;
+}
+
+.homeBodyText {
+	font-size: 30px;
+}
+
+.parentFooterText {
+	display: flex;
+	justify-content: center;
+}
+
+.footerText {
+	position: fixed;
+	bottom: 10px;
+}

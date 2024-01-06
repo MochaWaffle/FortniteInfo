@@ -1,5 +1,6 @@
 import useNews from '../components/useNews';
 import React, {Suspense} from 'react';
+import '../CSS/News.css'
 
 const BrNews = React.lazy(() => import('../components/BrNews'))
 const StwNews = React.lazy(() => import('../components/StwNews'))

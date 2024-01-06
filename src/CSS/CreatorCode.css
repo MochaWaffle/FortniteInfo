@@ -1,0 +1,65 @@
+.parentCodeContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 75vh;
+}
+
+.codeInput {
+	border: none;
+	padding: 10px;
+	margin-right: 10px;
+	font-size: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
+}
+
+.codeSubmit {
+	border: none;
+	padding: 10px;
+	font-size: 100%;
+	background-color: #3e4040;
+	color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
+	transition: all .5s ease;
+}
+
+.codeSubmit:hover {
+	background-color: #696d6d;
+	color: white;
+	transform: scale(1.05);
+	transition: all .5s ease;
+
+}
+
+.codeSubmit:active {
+	background-color: #9a9c9c;
+	color: white;
+}
+
+.creatorCodeTitle {
+	margin-bottom: 15px;
+}
+
+.codeText {
+	margin-top: 25px;
+}
+
+.Valid {
+	color: rgb(0, 255, 0);
+	font-size: 18px;
+}
+
+.Invalid {
+	color: rgb(255, 55, 55);
+	font-size: 18px;
+}
+
+@media only screen and (max-width: 320px) {
+	.codeInput {
+		margin-bottom: 15px;
+	}
+
+	.codeText {
+		margin-bottom: 20px;
+	}
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import {Suspense} from 'react'
 import {useEffect, useState} from 'react'
+import '../CSS/Shop.css'
 import legendary_background from '../assets/Images/legendary_background.jpg'
 import epic_background from '../assets/Images/epic_background.jpg'
 import rare_background from '../assets/Images/rare_background.jpg'

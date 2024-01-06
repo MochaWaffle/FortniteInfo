@@ -1,5 +1,6 @@
 import React, {Suspense} from 'react'
 import {useEffect, useState} from 'react';
+import '../CSS/Map.css'
 
 const MemoizedMap = React.memo(React.lazy(() => import('../components/MapInfo')))
 

@@ -1,0 +1,139 @@
+.newsContainer {
+	margin: auto;
+}
+
+.newsContainer img {
+	width: 800px;
+	height: 700px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
+	transition: all .5s ease;
+}
+
+.newsContainer img:hover {
+	transform: scale(1.01);
+	transition: all .5 ease;
+}
+
+.newsTitle {
+	margin: auto;
+	border-radius: 15px;
+	min-width: auto;
+	max-width: 500px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.764);
+}
+
+.newsText {
+	margin: auto;
+	width: 800px;
+	height: 20%;
+	padding: 5px;
+	font-size: 17px;
+}
+
+@media only screen and (max-width: 835px) {
+	.newsContainer img {
+		width: 500px;
+		height: 400px;
+	}
+
+	.newsText {
+		width: 500px;
+		font-size: 17px;
+	}
+}
+
+@media only screen and (max-width: 535px) {
+	.newsContainer img {
+		width: 430px;
+		height: 400px;
+	}
+
+	.newsText {
+		width: 430px;
+		font-size: 15px;
+	}
+}
+
+@media only screen and (max-width: 465px) {
+	.newsContainer img {
+		width: 400px;
+		height: 370px;
+	}
+
+	.newsText {
+		width: 400px;
+		font-size: 15px;
+	}
+}
+
+@media only screen and (max-width: 445px) {
+	.newsContainer img {
+		width: 370px;
+		height: 340px;
+	}
+
+	.newsText {
+		width: 370px;
+		font-size: 15px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.newsContainer img {
+		width: 340px;
+		height: 310px;
+	}
+
+	.newsText {
+		width: 340px;
+		font-size: 14px;
+	}
+}
+
+@media only screen and (max-width: 365px) {
+	.newsContainer img {
+		width: 310px;
+		height: 280px;
+	}
+
+	.newsText {
+		width: 310px;
+		font-size: 14px;
+	}
+}
+
+@media only screen and (max-width: 335px) {
+	.newsContainer img {
+		width: 280px;
+		height: 250px;
+	}
+
+	.newsText {
+		width: 280px;
+		font-size: 13px;
+	}
+}
+
+@media only screen and (max-width: 305px) {
+	.newsContainer img {
+		width: 250px;
+		height: 220px;
+	}
+
+	.newsText {
+		width: 250px;
+		font-size: 12px;
+	}
+}
+
+@media only screen and (max-width: 275px) {
+	.newsContainer img {
+		width: 220px;
+		height: 190px;
+	}
+
+	.newsText {
+		width: 220px;
+		font-size: 11px;
+	}
+}

@@ -1,3 +1,5 @@
+import '../CSS/Home.css'
+
 function Home() {
     return (
         <>

@@ -1,0 +1,54 @@
+.mapContainer {
+	margin: auto;
+}
+
+.mapContainer img {
+	width: 800px;
+	height: 700px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
+	transition: all .5s ease;
+}
+
+.mapContainer img:hover {
+	transform: scale(1.01);
+	transition: all .5s ease;
+}
+
+@media only screen and (max-width: 835px) {
+	.mapContainer img {
+		width: 500px;
+		height: 400px;
+	}
+}
+
+@media only screen and (max-width: 540px) {
+	.mapContainer img {
+		width: 400px;
+		height: 400px;
+	}
+}
+
+@media only screen and (max-width: 430px) {
+	.mapContainer img {
+		width: 300px;
+		height: 300px;
+	}
+}
+
+@media only screen and (max-width: 330px) {
+	.mapContainer img {
+		width: 250px;
+		height: 250px;
+	}
+}
+
+@media only screen and (max-width: 270px) {
+	.mapContainer img {
+		width: 230px;
+		height: 230px;
+	}
+
+	.containerResize {
+		margin-top: 45%;
+	}
+}

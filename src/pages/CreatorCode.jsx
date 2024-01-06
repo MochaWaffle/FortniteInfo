@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import '../CSS/CreatorCode.css'
 
 export default function CreatorCode() {
     const[code, setCode] = useState("");

@@ -1,0 +1,62 @@
+.cardContainer {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.card-image {
+	height: 170px;
+	margin-bottom: 15px;
+	background-size: cover;
+	border-radius: 15px 15px 0 0;
+}
+
+.card p {
+	padding: 10px;
+}
+
+.card a {
+	color: white;
+	display: block;
+	text-align: center;
+	margin: 20px 50px;
+	text-decoration: none;
+}
+
+.cardTextColor {
+	color: white;
+}
+
+.card:hover {
+	background-color: rgb(62, 62, 62);
+
+	.cardTextColor {
+		color: white;
+	}
+
+	transform: scale(1.03);
+	transition: all .5s ease;
+}
+
+.cardContainer>.card {
+	width: 270px;
+	margin: 10px;
+	border-radius: 15px;
+	background-size: cover;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.764), 0 6px 20px 0 rgba(0, 0, 0, 0.75);
+
+	transition: all .5s ease;
+}
+
+.cardPriceText img {
+	width: 25%;
+	height: 25%;
+	object-fit: contain;
+}
+
+@media (min-width: 630px) {
+	.cardContainer:has(.card:hover)>.card:not(:hover) {
+		scale: .8;
+		opacity: .7;
+	}
+}
