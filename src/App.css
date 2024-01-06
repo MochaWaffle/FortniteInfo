@@ -7,7 +7,7 @@
 
 html, body {
   font-family: 'Roboto', sans-serif;
-  background-color: #242333;
+  background-color: #086BBE;
   color: white;
   background: url("./assets/Images/Fortnite_Wallpaper_4.jpg") no-repeat center center fixed;
   background-size: cover;
@@ -24,6 +24,9 @@ html, body {
   color: rgb(215, 3, 3);
 }
 
+a:link {
+  color: #ffd300;
+}
 /*** Container Responsive Design ***/
 
 @media only screen and (max-width: 1380px) {

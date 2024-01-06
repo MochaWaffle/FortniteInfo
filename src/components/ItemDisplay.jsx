@@ -1,6 +1,7 @@
 import React from 'react'
 import CardInfo from './CardInfo'
 import unknownIMG from '../assets/Images/unknownIMG.jpg'
+import common_background from '../assets/Images/common_background.jpg'
 
 const MemoizedCardInfo = React.memo(CardInfo);
 
