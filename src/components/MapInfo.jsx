@@ -1,7 +1,7 @@
 export default function MapInfo({ mapType, mapLink, error }) {
     return (
         <>
-            <h1>{mapType}</h1>
+            <h1 style={{color: 'black'}}>{mapType}</h1>
 
             {!error && mapLink.length == 0 &&
                 <p> Currently no {mapType.toLowerCase()} in API.</p>
