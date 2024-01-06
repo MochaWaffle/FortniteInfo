@@ -1,5 +1,5 @@
-import React, {Suspense} from 'react'
-import {useEffect, useState} from 'react';
+import React, { Suspense } from 'react'
+import { useEffect, useState } from 'react';
 import '../CSS/Map.css'
 
 const MemoizedMap = React.memo(React.lazy(() => import('../components/MapInfo')))
@@ -15,7 +15,7 @@ export default function Map() {
             try {
                 const response = await fetch("https://fortnite-api.com/v1/map")
                 const data = await response.json();
-  
+
                 setMapWithPoisLink(data?.data?.images?.pois || '')
                 setMapWithoutPoisLink(data?.data?.images?.blank || '')
             } catch (error) {
@@ -41,16 +41,16 @@ export default function Map() {
                     </div>
                 }>
                     <MemoizedMap
-                        mapType = "Map With POIS"
-                        mapLink = {mapWithPoisLink}
-                        error = {error}
+                        mapType="Map With POIS"
+                        mapLink={mapWithPoisLink}
+                        error={error}
                     />
                     <br />
 
-                    <MemoizedMap 
-                        mapType = "Map Without POIS"
-                        mapLink = {mapWithoutPoisLink}
-                        error = {error}
+                    <MemoizedMap
+                        mapType="Map Without POIS"
+                        mapLink={mapWithoutPoisLink}
+                        error={error}
                     />
                 </Suspense>
             </div>

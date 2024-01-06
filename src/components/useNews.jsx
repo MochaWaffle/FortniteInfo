@@ -17,7 +17,6 @@ export default function useNews() {
             
             setNewsData(data.data);
           } catch (error) {
-            console.log("Error fetching news API data.")
             setError("An error occurred while retrieving the news data.")
           }
         }

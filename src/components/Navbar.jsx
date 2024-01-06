@@ -14,10 +14,10 @@ export default function Navbar() {
           <box-icon name='x' id="close-icon" color="white" size="2.8rem"></box-icon>
         </label>
         <nav className="navbar">
-          <Link to="/map" style={{'--i': 0}}>Map </Link>
-          <Link to="/news" style={{'--i': 1}}>News </Link>
-          <Link to="/shop" style={{'--i': 2}}>Shop </Link>
-          <Link to="/creatorcode" style={{'--i': 3}}>Creator Code</Link>
+          <Link to="/map" style={{ '--i': 0 }}>Map </Link>
+          <Link to="/news" style={{ '--i': 1 }}>News </Link>
+          <Link to="/shop" style={{ '--i': 2 }}>Shop </Link>
+          <Link to="/creatorcode" style={{ '--i': 3 }}>Creator Code</Link>
         </nav>
       </header>
     </>

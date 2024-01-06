@@ -1,4 +1,4 @@
-export default function MapInfo({mapType, mapLink, error}) {
+export default function MapInfo({ mapType, mapLink, error }) {
     return (
         <>
             <h1>{mapType}</h1>

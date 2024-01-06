@@ -17,7 +17,7 @@ export default function ItemDisplay({shopEntries, rarityBackground}) {
                                         if (entry?.regularPrice && entry?.finalPrice) {
                                             priceDifference = entry.regularPrice - entry.finalPrice;
                                         }
-        
+                                        
                                         return (
                                                                         
                                                 <MemoizedCardInfo

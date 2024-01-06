@@ -1,6 +1,6 @@
 import React from 'react'
-import {Suspense} from 'react'
-import {useEffect, useState} from 'react'
+import { Suspense } from 'react'
+import { useEffect, useState } from 'react'
 import '../CSS/Shop.css'
 import legendary_background from '../assets/Images/legendary_background.jpg'
 import epic_background from '../assets/Images/epic_background.jpg'
@@ -25,9 +25,9 @@ const BundleDisplay = React.lazy(() => import('../components/BundleDisplay'));
 const ItemDisplay = React.lazy(() => import('../components/ItemDisplay'));
 
 export default function Shop() {
-    const[shopEntries, setShopEntries] = useState([]);
-    const[error, setError] = useState(null);
-    
+    const [shopEntries, setShopEntries] = useState([]);
+    const [error, setError] = useState(null);
+
     const rarityBackground = {
         'starwars': StarWarsBackground,
         'legendary': legendary_background,
@@ -67,19 +67,19 @@ export default function Shop() {
 
         getShopData();
     }, []);
-    
+
 
     return (
         <>
-        <div className="containerResize">
-            <h1 className="shopTitle">Shop</h1>
-            {error && <p className="errorText">{error}</p>}
+            <div className="containerResize">
+                <h1 className="shopTitle">Shop</h1>
+                {error && <p className="errorText">{error}</p>}
 
-            {!error && shopEntries.length === 0 && <p>Currently no shop data in API.</p>}
+                {!error && shopEntries.length === 0 && <p>Currently no shop data in API.</p>}
 
-            {!error && shopEntries.length > 0 &&
+                {!error && shopEntries.length > 0 &&
                     <section className="cardContainer">
-                        
+
                         <Suspense fallback={
                             <div className="parentHomeContainer">
                                 <div className="homeContainer">
@@ -87,13 +87,13 @@ export default function Shop() {
                                 </div>
                             </div>
                         }>
-                            <BundleDisplay shopEntries={shopEntries} rarityBackground = {rarityBackground} />
-                            <ItemDisplay shopEntries={shopEntries} rarityBackground = {rarityBackground} />
+                            <BundleDisplay shopEntries={shopEntries} rarityBackground={rarityBackground} />
+                            <ItemDisplay shopEntries={shopEntries} rarityBackground={rarityBackground} />
                         </Suspense>
-                        
-                </section>
-            }
-        </div>
+
+                    </section>
+                }
+            </div>
         </>
     )
 }
