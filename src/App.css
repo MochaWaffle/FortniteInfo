@@ -149,9 +149,6 @@ html, body {
 
 .newsTitle {
   margin: auto;
-  /* margin-bottom: 5px; */
-  /* background-color: rgb(255, 0, 0); */
-  /* border: 5px solid black; */
   border-radius: 15px;
   min-width: auto;
   max-width: 500px;
@@ -199,7 +196,6 @@ html, body {
 .card:hover {
   background-color: rgb(62, 62, 62);
   .cardTextColor {color: white;}
-  cursor: pointer;
   transform: scale(1.03);
   transition: all .5s ease;
 }
