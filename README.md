@@ -1,8 +1,14 @@
-# React + Vite
+# Vite + Workbox
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Responsive PWA (Progressive Web Application) that fetches data from the API: https://fortnite-api.com/.
 
-Currently, two official plugins are available:
+- Uses Vite + Worbox.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Website available on GitHub pages, and can be downlodable on Desktop & Mobile using PWA.
+
+TO EDIT CODE AND SEE CHANGES LOCALLY ON YOUR COMPUTER
+
+1. Install npm.
+2. Clone project repository.
+3. Run "npm i" in terminal while in the project folder directory to install dependencies used.
+4. Run "npm run dev".
