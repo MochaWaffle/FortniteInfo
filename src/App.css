@@ -27,8 +27,8 @@ html, body {
 a:link {
   color: #ffd300;
 }
-/*** Container Responsive Design ***/
 
+/*** Container Responsive Design ***/
 @media only screen and (max-width: 1380px) {
   .containerResize {
     margin-top:10%;
