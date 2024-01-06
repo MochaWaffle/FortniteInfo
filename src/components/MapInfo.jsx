@@ -13,7 +13,7 @@ export default function MapInfo({mapType, mapLink, error}) {
             {!error && mapLink.length > 0 &&
                 <>
                     <div className="mapContainer">
-                        <a href={mapLink} target="_blank"><img src={mapLink} alt={`Image could not load. Image was: Current Fortnite ${mapType}.`}></img></a>
+                        <a href={mapLink} target="_blank"><img src={mapLink} alt={`Current Fortnite ${mapType} image could not load.`}></img></a>
                     </div>
                     <p> Click <a href={mapLink} target="_blank">image</a> to enlarge it.</p>
                 </>
