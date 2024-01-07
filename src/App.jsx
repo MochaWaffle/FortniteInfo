@@ -23,12 +23,12 @@ function App() {
           </div>
         }>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/creatorcode" element={<CreatorCode />} />
-            <Route path="/map" element={<Map />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/shop" element={<Shop />} />
+            <Route path="./" element={<Home />} />
+            <Route path="./home" element={<Home />} />
+            <Route path="./creatorcode" element={<CreatorCode />} />
+            <Route path="./map" element={<Map />} />
+            <Route path="./news" element={<News />} />
+            <Route path="./shop" element={<Shop />} />
           </Routes>
         </Suspense>
       </div>
