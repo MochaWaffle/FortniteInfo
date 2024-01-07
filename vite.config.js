@@ -146,5 +146,5 @@ export default defineConfig({
       }
     })
   ],
-  base: "/FortniteInfo/"
+  base: "/FortniteInfo"
 })
