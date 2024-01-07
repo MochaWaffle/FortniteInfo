@@ -39,7 +39,7 @@ export default function Shop() {
         'icon': icon_series_background,
         'marvel': marvel_background,
         'dc': dc_series_background,
-        'gaming': gaming_background,
+        'gaminglegends': gaming_background,
         'dark': dark_series_background,
         'frozen': frozen_background,
         'shadow': shadow_background,
