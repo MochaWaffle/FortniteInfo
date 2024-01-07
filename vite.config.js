@@ -16,7 +16,7 @@ export default defineConfig({
         theme_color: "#086BBE",
         orientation: "portrait",
         description: "FortniteInfo shows Fortnite's current map, news, and shop items and checks the validity of a creator code.",
-
+        start_url: "/",
         icons: [
           {
             "src": "icons/maskable-icon-48.png",
