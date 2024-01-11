@@ -129,13 +129,14 @@ export default defineConfig({
         ]
       },
       workbox: {
+        cleanupOutdatedCaches: true,
         globPatterns: ['**/*'],
         runtimeCaching: [{
           urlPattern: ({ url }) => {
             console.log("Href: " + url.href)
             return url.href.includes("fortnite-api.com");
           },
-          handler: "CacheFirst",
+          handler: "StaleWhileRevalidate",
           options: {
             cacheName: "api-cache",
             cacheableResponse: {
