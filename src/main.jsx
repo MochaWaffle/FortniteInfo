@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import "./App.css"
 import { registerSW} from 'virtual:pwa-register'
 
-registerSW({immediate: true})
+registerSW({immediate: true, scope: "/"})
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
