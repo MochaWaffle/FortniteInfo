@@ -10,6 +10,8 @@
 
 - Website available on GitHub pages, and can be downlodable on Desktop & Mobile using PWA.
 
+- Website may only show cached data and requires cache to be cleared to see updated data.
+
 ## Visit
 - https://fortnite-info.netlify.app/
 
