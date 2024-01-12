@@ -8,7 +8,7 @@
 
 - Uses Vite + Workbox.
 
-- Website available on GitHub pages, and can be downlodable on Desktop & Mobile using PWA.
+- Website can be downloaded on desktop and mobile using PWA.
 
 - Website may only show cached data and requires cache to be cleared to see updated data.
 
