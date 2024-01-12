@@ -1,9 +1,9 @@
-# FortniteInfo
+# 📖 FortniteInfo 📖
 
-## About
+## 💡 About 💡
 - FortniteInfo shows Fortnite's current map, news, and shop items and checks the validity of a creator code.
 
-## More Information
+## ℹ️ More Information ℹ️
 
 - Uses Vite + Workbox.
 
@@ -16,10 +16,10 @@
 > [!NOTE]
 > Website may only show cached data and requires cache to be cleared to see updated data.
 
-## Visit
+## 🔗 Visit 🔗
 - https://fortnite-info.netlify.app/
 
-### TO EDIT CODE AND SEE CHANGES LOCALLY ON YOUR COMPUTER
+### 💻 TO EDIT CODE AND SEE CHANGES LOCALLY ON YOUR COMPUTER 💻
 
 1. Install npm.
 2. Clone project repository.
