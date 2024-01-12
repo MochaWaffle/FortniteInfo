@@ -1,4 +1,4 @@
-# <h1 align="center">📖 FortniteInfo 📖</h1>
+# 📖 FortniteInfo 📖
 
 ## 💡 About 💡
 - FortniteInfo shows Fortnite's current map, news, and shop items and checks the validity of a creator code.
