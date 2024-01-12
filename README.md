@@ -12,8 +12,9 @@
 - Website can be downloaded on desktop and mobile using PWA.
 
 - Responsive Design.
+
 > [!NOTE]
-- Website may only show cached data and requires cache to be cleared to see updated data.
+> Website may only show cached data and requires cache to be cleared to see updated data.
 
 ## Visit
 - https://fortnite-info.netlify.app/
