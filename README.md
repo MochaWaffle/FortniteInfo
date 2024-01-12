@@ -12,7 +12,7 @@
 - Website can be downloaded on desktop and mobile using PWA.
 
 - Responsive Design.
-[!NOTE]
+> [!NOTE]
 - Website may only show cached data and requires cache to be cleared to see updated data.
 
 ## Visit
