@@ -135,7 +135,7 @@ export default defineConfig({
           urlPattern: ({ url }) => {
             return url.href.includes("fortnite-api.com");
           },
-          handler: "StaleWhileRevalidate",
+          handler: "NetworkFirst",
           options: {
             cacheName: "api-cache",
             cacheableResponse: {

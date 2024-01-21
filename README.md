@@ -14,7 +14,7 @@
 - Responsive Design.
 
 > [!NOTE]
-> Website may only show cached data and requires cache to be cleared to see updated data.
+> Reload/Refresh the page if it does not load (shows no content in the middle).
 
 ## 🔗 Visit 🔗
 - https://fortnite-info.netlify.app/

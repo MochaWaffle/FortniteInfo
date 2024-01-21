@@ -3,6 +3,7 @@
 	justify-content: center;
 	align-items: center;
 	height: 65vh;
+	margin-top: 100px;
 }
 
 .homeTitle {
@@ -22,4 +23,13 @@
 .footerText {
 	position: fixed;
 	bottom: 10px;
+}
+
+@media only screen and (max-width: 430px) {
+	.homeTitle {
+		font-size: 45px;
+	}
+	.homeBodyText {
+		font-size: 25px;
+	}
 }
